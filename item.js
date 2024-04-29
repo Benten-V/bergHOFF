@@ -7,6 +7,12 @@
             this.#name = name;
             this.#img = img;
         }
+        getName(){
+            return this.#name;
+        }
+        getImg(){
+            return this.#img;
+        }
     }
     class Inventory{
         #items = [];
@@ -18,7 +24,7 @@
             const slots = slotsList.querySelectorAll(".frigo-item");
             let i = 0;
             this.#items.forEach(item => {
-                
+
             });
         }
     }
