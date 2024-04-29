@@ -10,6 +10,7 @@
     --yellow: #fff45f;
     --brown-top: rgb(189, 128, 97);
     --brow-bottom: rgb(148, 92, 55);
+    --blue-border: rgb(73, 139, 246);
 }
 
 img {
@@ -131,6 +132,8 @@ body {
     width: 100px;
 }
 
+/* keuken */
+
 .main-keuken {
     min-height: 100vh;
     background-image: url(./Images/keuken-img.png);
@@ -140,6 +143,87 @@ body {
     background-position: center;
     position: relative;
 }
+
+.table-items {
+    height: 7rem;
+    position: absolute;
+    left: 40%;
+    bottom: 0;
+}
+
+.table-items img {
+    height: 8rem;
+}
+
+.item-snijden {
+    height: 7rem;
+    position: absolute;
+    left: 40%;
+    bottom: 0;
+}
+
+.item-schijden img {
+    height: 7rem;
+}
+
+/* frigo */
+
+.main-frigo {
+    min-height: 100vh;
+    background-image: url(./Images/keuken-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 10%;
+    background-position: center;
+    position: relative;
+}
+
+.frigo {
+    width: 80vw;
+    height: 80vh;
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: .6rem;
+    border: 2px solid var(--blue-border);
+}
+
+.frigo h2 {
+    margin: 0;
+    padding: .9rem;
+}
+
+.frigo-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.frigo-top img {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: .9rem;
+    margin-top: .7rem;
+}
+
+.frigo-item {
+    height: 4.2rem;
+    width: 4.2rem;
+    background-color: rgba(128, 128, 128, 0.209);
+    border: 1px solid gray;
+    border-radius: .6rem;
+}
+
+.list-frigo {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline-start: 2rem;
+    gap: 1rem;
+}
+
+
 
 
 
