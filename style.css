@@ -8,6 +8,8 @@
     --bg: var(--white);
     --primary: var(--black);
     --yellow: #fff45f;
+    --brown-top: rgb(189, 128, 97);
+    --brow-bottom: rgb(148, 92, 55);
 }
 
 img {
@@ -68,10 +70,10 @@ body {
 }
 
 
-.fade-in {
+/* .fade-in {
     animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation-delay: 1.5s;
-}
+} */
 
 @keyframes fade-in {
     0% {
@@ -85,11 +87,61 @@ body {
 
 .main-section {
     min-height: 100vh;
-    background-image: url(./Images/Kamer_background+desk.png);
+    background-image: url(./Images/background-kamer.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
+    background-position: center;
+    position: relative;
 }
+
+.table {
+    background-color: var(--brown-top);
+    min-width: 100vw;
+    height: 9rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.table div:nth-child(1) {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--brow-bottom);
+    width: 100vw;
+    height: 4rem;
+}
+
+
+.fig {
+    position: absolute;
+    /* top: 55%; */
+    bottom: 4rem;
+    height: 5rem;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.fig>div {
+    display: flex;
+}
+
+.fig img {
+    width: 100px;
+}
+
+.main-keuken {
+    min-height: 100vh;
+    background-image: url(./Images/keuken-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 10%;
+    background-position: center;
+    position: relative;
+}
+
+
 
 .hidden {
     display: none;
