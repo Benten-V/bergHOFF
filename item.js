@@ -32,7 +32,7 @@
             });
         }
     }
-    const steak = new Item("steak", "./Images.fresh-red-meat-file-free-png.webp");
+    const steak = new Item("steak", "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png");
     let inventoryList = [steak];
     const fridge = new Inventory(inventoryList);
 })()
