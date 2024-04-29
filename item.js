@@ -26,7 +26,8 @@
             let i = 0;
             this.#items.forEach(item => {
                 let itemElement = document.createElement("img");
-                itemElement.innerHTML = `src=${this.item.getImg()} alt=${this.item.getName()}`;
+                itemElement.src = item.getImg();
+                itemElement.alt = item.getName();
                 slots[i].appendChild(itemElement);
             });
         }
