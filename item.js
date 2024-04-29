@@ -29,10 +29,13 @@
                 itemElement.src = item.getImg();
                 itemElement.alt = item.getName();
                 slots[i].appendChild(itemElement);
+                i++;
             });
         }
     }
     const steak = new Item("steak", "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png");
-    let inventoryList = [steak];
+    const steak2 = new Item("steak", "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png");
+    const steak3 = new Item("steak", "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png");
+    let inventoryList = [steak, steak2, steak3];
     const fridge = new Inventory(inventoryList);
 })()
