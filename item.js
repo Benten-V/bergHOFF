@@ -36,6 +36,8 @@
     const steak = new Item("steak", "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png");
     const steak2 = new Item("steak", "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png");
     const steak3 = new Item("steak", "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png");
-    let inventoryList = [steak, steak2, steak3];
+    const steak4 = new Item("steak", "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png");
+
+    let inventoryList = [steak, steak2, steak3,steak4,];
     const fridge = new Inventory(inventoryList);
 })()
