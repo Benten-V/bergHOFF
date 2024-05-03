@@ -266,7 +266,7 @@ body {
 
 .main-keuken-zoom {
     min-height: 100vh;
-    background-image: url(./Images/Keuken-img-zoom-1900.png);
+    background-image: url(./Images/Keuken-img-zoom-2700.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
@@ -276,11 +276,11 @@ body {
 
 .keuken-zoom-img-kast {
     height: 5rem;
-    width: 5rem;
+    width: 22rem;
     position: absolute;
-    right: 20%;
-    top: 60%;
-    background-color: yellow;
+    right: 0%;
+    bottom: 0;
+    /*background-color: yellow;*/
 }
 
 /* keuken zoom kast */
