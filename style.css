@@ -96,6 +96,13 @@ body {
     position: relative;
 }
 
+.slaapkamer-deur {
+    height: 10rem;
+    width: 8rem;
+    position: absolute;
+    right: 0;
+}
+
 .table {
     background-color: var(--brown-top);
     min-width: 100vw;
@@ -136,12 +143,28 @@ body {
 
 .main-keuken {
     min-height: 100vh;
-    background-image: url(./Images/keuken-img.png);
+    background-image: url(./Images/Keuken-licht.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
     background-position: center;
     position: relative;
+}
+
+.keuken-img-frigo {
+    position: absolute;
+    right: 0;
+    height: 10rem;
+    width: 10rem;
+    top: 0;
+}
+
+.keuken-img-micro {
+    position: absolute;
+    left: 12%;
+    top: 20%;
+    height: 5rem;
+    width: 7rem;
 }
 
 .table-items {
@@ -227,10 +250,6 @@ body {
     margin-inline-start: 2rem;
     gap: 1rem;
 }
-
-
-
-
 
 .hidden {
     display: none;
