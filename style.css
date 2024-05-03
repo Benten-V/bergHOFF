@@ -54,7 +54,7 @@ body {
 
 @keyframes slide-out {
     0% {
-        transform: translateZ(1);
+        transform: translateZ(0);
         opacity: 1;
     }
 
@@ -71,10 +71,10 @@ body {
 }
 
 
-/* .fade-in {
+.fade-in {
     animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation-delay: 1.5s;
-} */
+}
 
 @keyframes fade-in {
     0% {
@@ -167,6 +167,14 @@ body {
     width: 7rem;
 }
 
+.keuken-img-diepvries {
+    position: absolute;
+    height: 5rem;
+    width: 10rem;
+    right: 0;
+    top: 45%;
+}
+
 .table-items {
     height: 7rem;
     position: absolute;
@@ -188,6 +196,8 @@ body {
 .item-schijden img {
     height: 7rem;
 }
+
+
 
 /* frigo */
 
@@ -250,6 +260,31 @@ body {
     margin-inline-start: 2rem;
     gap: 1rem;
 }
+
+
+/* Keuken zoom */
+
+.main-keuken-zoom {
+    min-height: 100vh;
+    background-image: url(./Images/Keuken-img-zoom-1900.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 10%;
+    background-position: center;
+    position: relative;
+}
+
+.keuken-zoom-img-kast {
+    height: 5rem;
+    width: 5rem;
+    position: absolute;
+    right: 20%;
+    top: 60%;
+    background-color: yellow;
+}
+
+/* keuken zoom kast */
+
 
 .hidden {
     display: none;
