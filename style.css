@@ -13,6 +13,16 @@
     --blue-border: rgb(73, 139, 246);
 }
 
+/* button:focus-visible {
+    box-shadow:#fff45f 1rem 1rem ;
+} */
+
+button {
+    background-color: transparent;
+    /* border: none; */
+}
+
+
 img {
     max-width: 100%;
     aspect-ratio: 8/5;
@@ -34,13 +44,20 @@ body {
 
 
 .opening-animation img {
-    aspect-ratio: 3/1;
-    margin-block: auto;
+    aspect-ratio: 4/1;
+
+    margin: 0;
 }
 
 .opening-animation {
-    display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    background-image: url(./Images/Berghoff_black.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 20% 10%;
+    background-position: center;
+    position: relative;
+
 }
 
 .opening-animation figure {
@@ -154,8 +171,8 @@ body {
 .keuken-img-frigo {
     position: absolute;
     right: 0;
-    height: 10rem;
-    width: 10rem;
+    height: 45%;
+    width: 20%;
     top: 0;
 }
 
@@ -163,14 +180,14 @@ body {
     position: absolute;
     left: 12%;
     top: 20%;
-    height: 5rem;
-    width: 7rem;
+    height: 20%;
+    width: 12%;
 }
 
 .keuken-img-diepvries {
     position: absolute;
-    height: 5rem;
-    width: 10rem;
+    height: 25%;
+    width: 20%;
     right: 0;
     top: 45%;
 }
@@ -183,7 +200,7 @@ body {
 }
 
 .table-items img {
-    height: 8rem;
+    height: 35%;
 }
 
 .item-snijden {
@@ -308,8 +325,82 @@ body {
 
 
 
+@media screen and (min-width: 800px) and (min-height: 400px) {
+    .table-items {
+        bottom: 10%;
+    }
+
+    .keuken-img-micro {
+        left: 12%;
+        top: 25%;
+        height: 18%;
+        width: 12%;
+    }
+}
+
+@media screen and (min-width: 800px) and (min-height: 550px) {
+    .table-items {
+        bottom: 17%;
+    }
+
+    .keuken-img-micro {
+        left: 10%;
+        top: 30%;
+        height: 15%;
+        width: 12%;
+    }
+
+    .keuken-img-diepvries {
+        height: 20%;
+        width: 20%;
+    }
 
 
+}
+
+@media screen and (min-width: 800px) and (min-height: 650px) {
+    .table-items {
+        bottom: 20%;
+    }
+
+    .keuken-img-micro {
+        left: 3%;
+        top: 30%;
+        height: 15%;
+        width: 15%;
+    }
+
+    .keuken-img-diepvries {
+        height: 20%;
+        width: 15%;
+    }
+
+    .keuken-img-frigo {
+        width: 15%;
+    }
+
+}
+
+
+@media screen and (min-width: 950px) and (min-height: 650px) {
+
+    .keuken-img-micro {
+        left: 9%;
+        top: 30%;
+        height: 15%;
+        width: 15%;
+    }
+
+    .keuken-img-diepvries {
+        height: 20%;
+        width: 20%;
+    }
+
+    .keuken-img-frigo {
+        width: 20%;
+    }
+
+}
 
 
 .hidden {
