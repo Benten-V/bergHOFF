@@ -94,10 +94,10 @@ body {
 }
 
 
-.fade-in {
+/* .fade-in {
     animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation-delay: 1.5s;
-}
+} */
 
 @keyframes fade-in {
     0% {
@@ -343,11 +343,23 @@ body {
         width: 12%;
     }
 
+    .slaapkamer-deur {
+        height: 13rem;
+        width: 8rem;
+        position: absolute;
+        right: 0;
+    }
+
 }
 
 @media screen and (min-width: 800px) and (min-height: 550px) {
     .table-items {
         bottom: 17%;
+    }
+
+    .slaapkamer-deur {
+        height: 18rem;
+        width: 7rem;
     }
 
     .keuken-img-micro {
@@ -389,6 +401,11 @@ body {
         width: 15%;
     }
 
+    .slaapkamer-deur {
+        height: 21rem;
+        width: 5rem;
+    }
+
 }
 
 
@@ -399,6 +416,11 @@ body {
         top: 30%;
         height: 15%;
         width: 15%;
+    }
+
+    .slaapkamer-deur {
+        height: 21rem;
+        width: 9rem;
     }
 
     .keuken-img-diepvries {
@@ -419,6 +441,11 @@ body {
     }
 
 
+    .slaapkamer-deur {
+        height: 21rem;
+        width: 11rem;
+    }
+
     .inv-item {
         height: 8rem;
         width: 8rem;
@@ -436,6 +463,10 @@ body {
         height: 30rem;
     }
 
+    .slaapkamer-deur {
+        height: 21rem;
+        width: 15rem;
+    }
 
     .inv-item {
         height: 10rem;
