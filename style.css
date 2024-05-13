@@ -254,3 +254,58 @@ body {
 .hidden {
     display: none;
 }
+
+
+
+
+.dialog {
+    z-index: 5;
+    position: absolute;
+    border: 2px solid gray;
+    width: 70%;
+    height: 30%;
+    bottom: 5%;
+    left: 15%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg);
+    border-radius: .5rem;
+}
+
+.dialog button {
+    align-self: flex-end;
+    padding: .5rem;
+}
+
+.text-dialog h2 {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.text-dialog p {
+    margin: 0;
+    height: 60%;
+}
+
+.text-dialog {
+    width: 100%;
+}
+
+.dialog>div {
+    padding-left: .5rem;
+    width: 77%;
+    display: flex;
+    flex-direction: row;
+}
+
+.dialog figure {
+    position: absolute;
+    height: 40%;
+    width: 15%;
+    right: 3%;
+    top: -80%;
+}
+
+.dialog img {
+    aspect-ratio: 3/4;
+}
