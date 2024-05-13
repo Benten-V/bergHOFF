@@ -13,9 +13,9 @@
     <main>
       <h1 class="hidden">Berghoff game</h1>
       <section class="opening-animation slide-out hidden">
-        <!-- <figure>
-               <img src="./Images/Berghoff_black.png" alt="berghoff_black logo" />
-             </figure> -->
+        <figure>
+          <img src="./Images/Berghoff_black.png" alt="berghoff_black logo" />
+        </figure>
       </section>
       <section class="main-section fade-in">
         <button class="slaapkamer-deur"></button>
@@ -56,9 +56,11 @@
       </section>
 
       <section class="main-keuken hidden">
+        <button class="slaapkamer-terug">Terug naar slaap- kamer</button>
         <button class="keuken-img-frigo"></button>
         <button class="keuken-img-micro"></button>
         <button class="keuken-img-diepvries"></button>
+        <button class="zoom">Zoom in</button>
         <div class="table-items">
           <figure>
             <img src="./Images/wooden-board.png" alt="houden board" />
@@ -120,13 +122,20 @@
 
       <section class="main-keuken-zoom hidden">
         <button class="keuken-zoom-img-kast"></button>
+        <button class="terug-zoom">terug naar keuken</button>
       </section>
 
       <section class="main-kast hidden">
         <div class="kast inv">
           <div class="inv-top">
             <h2>Kast</h2>
-            <figure><img src="./Images/close.png" alt="" /></figure>
+            <figure>
+              <img
+                src="./Images/close.png"
+                alt="sluit icon"
+                class="close-kast"
+              />
+            </figure>
           </div>
           <div class="list-inv">
             <div class="inv-item">
