@@ -111,7 +111,7 @@ body {
 
 .main-section {
     min-height: 100vh;
-    background-image: url(./Images/background-kamer.png);
+    background-image: url(./Images/slaap-kamer-glow.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
@@ -322,7 +322,7 @@ body {
 
 .main-keuken-zoom {
     min-height: 100vh;
-    background-image: url(./Images/Keuken-zoom-glow.png);
+    background-image: url(./Images/keuken-zoom-kast-top.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
@@ -331,11 +331,11 @@ body {
 }
 
 .keuken-zoom-img-kast {
-    height: 22%;
-    width: 45%;
+    height: 35%;
+    width: 40%;
     position: absolute;
     right: 0%;
-    bottom: 0%;
+    top: 0;
     /*background-color: yellow;*/
 }
 
@@ -349,7 +349,7 @@ body {
 
 .main-kast {
     min-height: 100vh;
-    background-image: url(./Images/Keuken-zoom-glow.png);
+    background-image: url(./Images/keuken-zoom-kast-top.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
