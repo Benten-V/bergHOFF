@@ -17,13 +17,14 @@
     box-shadow:#fff45f 1rem 1rem ;
 } */
 
-button {
+.button {
     background-color: transparent;
+    border: 2px solid black;
     /* border: none; */
 }
 
 
-button:hover {
+.button:hover {
     box-shadow: 0 0 100px 60px #fff45f;
 
 }
