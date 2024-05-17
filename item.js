@@ -101,15 +101,11 @@
     }
 
     randomizer() {
-      this.item1 = Math.round(
-        Math.random() * (this.vleeslist.length - 1) + 1
-      );
+      this.item1 = Math.round(Math.random() * (this.vleeslist.length - 1) + 1);
       this.item2 = Math.round(
         Math.random() * (this.groentenlist.length - 1) + 1
       );
-      let x = Math.round(
-        Math.random() * (this.groentenlist.length - 1) + 1
-      );
+      let x = Math.round(Math.random() * (this.groentenlist.length - 1) + 1);
       if (this.item2 === x && x >= 2) {
         this.item3 = x - 1;
       } else if (this.item2 === x) {
@@ -121,7 +117,13 @@
     }
 
     update() {
-        
+      const randomlijst = document.querySelector(".itemrandomlijst");
+      const randomli1 = randomlijst.querySelector(".item1");
+      const randomli2 = randomlijst.querySelector(".item2");
+      const randomli3 = randomlijst.querySelector(".item3");
+      randomli1.textContent = vleeslist[this.item1 - 1].getName();
+      randomli2.textContent = groetenlist[this.item2 - 1].getName();
+      randomli3.textContent = groetenlist[this.item3 - 1].getName();
     }
   }
 
@@ -131,4 +133,5 @@
     vleeslist
   );
   itemRandomizer.randomizer();
+  itemRandomizer.update();
 })();

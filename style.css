@@ -209,6 +209,14 @@ body {
     padding: .2rem;
 }
 
+.keuken-img-micro ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.keuken-img-micro li
+
 .keuken-img-diepvries {
     position: absolute;
     height: 25%;
