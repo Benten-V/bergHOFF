@@ -72,15 +72,16 @@
         itemElement.src = item.getImg();
         itemElement.alt = item.getName();
         slots[i].appendChild(itemElement);
-        itemElement.addEventListener("click", () =>
-          this.checkitem(this.#items[i], itemElement)
-        );
+
+        itemElement.addEventListener("click", () => {
+          this.checkitem(item, itemElement);
+        });
         i++;
       });
-
-      //het probleem nu is dat this.#item[i] is undefined aangezien het in een loop zit maar ik moet deze waarde hebben
-      // maar ik heb geen idee hoe ik deze kan onthouden.
     }
+
+    //het probleem nu is dat this.#item[i] is undefined aangezien het in een loop zit maar ik moet deze waarde hebben
+    // maar ik heb geen idee hoe ik deze kan onthouden.
     moveItem(item, itemElement) {
       sluitItem(frigovenster, keuken);
       const groentenList = document.querySelector(".groenten");
@@ -115,17 +116,24 @@
     }
 
     checkitem(item, itemElement) {
-      console.log(item);
-      console.log(itemElement);
-      console.log(vleeslist[this.item1 - 1].getName());
-      console.log(groetenlist[this.item2 - 1].getName());
-      console.log(groetenlist[this.item3 - 1].getName());
-      if (item === this.item3.getName()) {
-        if (nummer === item1) {
-          this.moveItem(item, itemElement);
-        } else {
-          console.log("kan niet (ik ga dit nog beter maken)");
-        }
+      //   console.log(item);
+      //   console.log(itemElement);
+      //   console.log(vleeslist[this.item1 - 1].getName());
+      //   console.log(groetenlist[this.item2 - 1].getName());
+      //   console.log(groetenlist[this.item3 - 1].getName());
+
+
+      // werkt bijna enige probleem is da ge niet meerdere groenten kunt plaatsen
+
+      if (
+        item.getName() === this.vleeslist[this.item1].getName() ||
+        item.getName() === this.groentenlist[this.item2].getName() ||
+        item.getName() === this.groentenlist[this.item3].getName()
+      ) {
+        this.moveItem(item, itemElement);
+        console.log("replace");
+      } else {
+        console.log("kan niet (ik ga dit nog beter maken)");
       }
     }
   }
