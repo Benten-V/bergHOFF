@@ -84,20 +84,35 @@
 
   let inventoryList = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
   let vleeslist = [steak, kip, beacon];
-  let groeten = [sla, tomaat, komkommer, wortel];
+  let groetenlist = [sla, tomaat, komkommer, wortel];
   const fridge = new Inventory(inventoryList);
 
   class itemRandomizer {
-    #lijst = [];
-    #item1;
-    #item2;
-    #item3;
-    constructor(lijst) {
-      this.#lijst = lijst;
+    lijst = [];
+    vleeslist = [];
+    groentenlist = [];
+    item1;
+    item2;
+    item3;
+    constructor(lijst, groentenlist, vleeslist) {
+      this.lijst = lijst;
+      this.groentenlist = groentenlist;
+      this.vleeslist = vleeslist;
     }
 
     randomizer() {
-        
+      this.item1 =
+        Math.random() * (this.vleeslist.length - 1 - 1) +
+        this.vleeslist.length -
+        1;
+      this.item2 =
+        Math.random() * (this.groentenlist.length - 1 - 1) +
+        this.groentenlist.length -
+        1;
+        let x = Math.random() * (this.groentenlist.length - 1 - 1) +
+        this.groentenlist.length -
+        1;
+        if ()
     }
   }
 })();
