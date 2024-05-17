@@ -1,6 +1,11 @@
+CREATE DATABASE leaderboard;
+
+USE leaderboard;
+
 CREATE TABLE leaderboard (
-    PlayerID INT AUTO_INCREMENT PRIMARY KEY,
-    PlayerName VARCHAR(30) NOT NULL,
-    Score INT NOT NULL,
-    DateAchieved DATE
+    userName VARCHAR(30),
+    marks INT(10),
+    dateAchieved DATE
 );
+
+INSERT INTO leaderboard (userName, marks, dateAchieved) VALUES ('BentenV', 100, '2024-05-13');
