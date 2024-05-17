@@ -14,6 +14,18 @@
       return this.#img;
     }
   }
+
+  class groenten extends Item {
+    constructor(name, img) {
+      super(name, img);
+    }
+  }
+
+  class vlees extends Item {
+    constructor(name, img) {
+      super(name, img);
+    }
+  }
   class Inventory {
     #items = [];
     constructor(items) {
@@ -33,23 +45,59 @@
       });
     }
   }
-  const steak = new Item(
+  const steak = new vlees(
     "steak",
-    "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
+    "./Images/fresh-red-meat-file-free-png.webp"
   );
-  const steak2 = new Item(
-    "steak",
-    "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
+  const kip = new vlees(
+    "kip",
+    "./Images/kisspng-roast-chicken-food-roasting-clip-art-chicken-roast-5b48ff6f35ccd8.0481672615315106392204-removebg-preview.png"
   );
-  const steak3 = new Item(
-    "steak",
-    "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
+  const beacon = new vlees(
+    "beacon",
+    "./Images/pngtree-cartoon-pork-decorative-illustration-image_1454021-removebg-preview.png"
   );
-  const steak4 = new Item(
-    "steak",
-    "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
+  //   const steak4 = new vlees(
+  //     "steak",
+  //     "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
+  //   );
+
+  const sla = new groenten(
+    "sla",
+    "./Images/184341742-verse-groene-sla-geïsoleerd-op-wit-removebg-preview.png"
   );
 
-  let inventoryList = [steak, steak2, steak3, steak4];
+  const tomaat = new groenten(
+    "tomaat",
+    "./Images/8424339-tomaat-geisoleerde-enkele-eenvoudige-cartoon-illustratie-vector-removebg-preview.png"
+  );
+
+  const komkommer = new groenten(
+    "komkommer",
+    "./Images/kisspng-pickled-cucumber-vegetable-melon-clip-art-cucumber-5abc06278bb8c3.2746227815222717835723-removebg-preview.png"
+  );
+
+  const wortel = new groenten(
+    "wortel",
+    "./Images/carrot-illustration-with-leaf-png.webp"
+  );
+
+  let inventoryList = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
+  let vleeslist = [steak, kip, beacon];
+  let groeten = [sla, tomaat, komkommer, wortel];
   const fridge = new Inventory(inventoryList);
+
+  class itemRandomizer {
+    #lijst = [];
+    #item1;
+    #item2;
+    #item3;
+    constructor(lijst) {
+      this.#lijst = lijst;
+    }
+
+    randomizer() {
+        
+    }
+  }
 })();

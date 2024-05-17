@@ -118,6 +118,7 @@ body {
     background-position: 20% 10%;
     background-position: center;
     position: relative;
+    overflow: hidden;
 }
 
 .slaapkamer-deur {
@@ -195,9 +196,17 @@ body {
 .keuken-img-micro {
     position: absolute;
     left: 12%;
-    top: 20%;
-    height: 20%;
-    width: 12%;
+    top: 18%;
+    height: 30%;
+    width: 15%;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.keuken-img-micro h2 {
+    margin: 0;
+    font-size: .8rem;
+    padding: .2rem;
 }
 
 .keuken-img-diepvries {
@@ -247,6 +256,11 @@ body {
 
 
 /* frigo */
+
+.close-frigo {
+    background-color: transparent;
+    border: none;
+}
 
 .main-frigo {
     min-height: 100vh;
@@ -318,6 +332,11 @@ body {
     position: relative;
 }
 
+.close-diepvries {
+    background-color: transparent;
+    border: none;
+}
+
 
 /* Keuken zoom */
 
@@ -358,6 +377,10 @@ body {
     position: relative;
 }
 
+.close-kast {
+    background-color: transparent;
+    border: none;
+}
 
 
 /* eindscherm */
@@ -593,7 +616,7 @@ body {
 }
 
 
-.leaderboard{
+.leaderboard {
     padding: 1rem;
     font-family: sans-serif;
 }
