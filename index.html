@@ -55,33 +55,78 @@
       </div>
     </section>
 
-    <section class="main-keuken">
-      <div class="leaderboard">
-        <table id="leaderboardTable">
-          <tr>
-            <th>Player Name</th>
-            <th>Score</th>
-            <th>Date Achieved</th>
-          </tr>
-        </table>
-      </div>
-      <div class="keuken-img-frigo"></div>
-      <div class="keuken-img-micro"></div>
-      <div class="table-items">
-        <figure>
-          <img src="./Images/wooden-board.png" alt="houden board" />
-        </figure>
-      </div>
-    </section>
+      <section class="main-keuken hidden">
+        <div class="slaapkamer-terug button">Terug naar slaap- kamer</div>
+        <div class="keuken-img-frigo button"></div>
+        <div class="keuken-img-micro button"></div>
+        <div class="keuken-img-diepvries button"></div>
+        <div class="zoom button">Zoom in</div>
+        <div class="messen">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="table-items">
+          <figure>
+            <img src="./Images/wooden-board.png" alt="houden board" />
+          </figure>
+        </div>
+        <div class="groenten">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </section>
 
-    <section class="main-frigo hidden">
-      <div class="frigo">
-        <div class="frigo-top">
-          <h2>Frigo</h2>
-          <figure><img src="./Images/close.png" alt="" /></figure>
+      <section class="main-frigo hidden">
+        <div class="frigo inv">
+          <div class="inv-top">
+            <h2>Frigo</h2>
+            <figure>
+              <img src="./Images/close.png" alt="" class="close-frigo" />
+            </figure>
+          </div>
+          <div class="list-inv">
+            <div class="inv-item">
+              <img
+                src="./Images/fresh-red-meat-file-free-png.webp"
+                alt="steak"
+              />
+            </div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+          </div>
         </div>
-        <div class="list-frigo">
-          <div class="frigo-item">
+      </section>
+      <section class="main-diepvries hidden">
+        <div class="diepvries inv">
+          <div class="inv-top">
+            <h2>Diepvries</h2>
+            <figure>
+              <img src="./Images/close.png" alt="" class="close-diepvries" />
+            </figure>
+          </div>
+          <div class="list-inv">
+            <div class="inv-item">
+              <img src="./Images/placeholder.jpeg" alt="steak" />
+            </div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
           </div>
           <div class="frigo-item"></div>
           <div class="frigo-item"></div>
@@ -93,31 +138,68 @@
           <div class="frigo-item"></div>
           <div class="frigo-item"></div>
         </div>
-      </div>
-    </section>
-    <section class="main-diepvries hidden">
-      <div class="diepvries">
-        <div class="diepvries-top">
-          <h2>Diepvries</h2>
-          <figure><img src="./Images/close.png" alt="" /></figure>
-        </div>
-        <div class="diepvries-frigo">
-          <div class="diepvries-item">
-            <img src="./Images/placeholder.jpeg" alt="steak" />
+      </section>
+
+      <section class="main-keuken-zoom hidden">
+        <div class="keuken-zoom-img-kast button"></div>
+        <div class="terug-zoom button">terug naar keuken</div>
+      </section>
+
+      <section class="main-kast hidden">
+        <div class="kast inv">
+          <div class="inv-top">
+            <h2>Kast</h2>
+            <figure>
+              <img
+                src="./Images/close.png"
+                alt="sluit icon"
+                class="close-kast"
+              />
+            </figure>
           </div>
-          <div class="diepvries-item"></div>
-          <div class="diepvries-item"></div>
-          <div class="diepvries-item"></div>
-          <div class="diepvries-item"></div>
-          <div class="diepvries-item"></div>
-          <div class="diepvries-item"></div>
-          <div class="diepvries-item"></div>
-          <div class="diepvries-item"></div>
-          <div class="diepvries-item"></div>
+          <div class="list-inv">
+            <div class="inv-item">
+              <img src="./Images/placeholder.jpeg" alt="steak" />
+            </div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+            <div class="inv-item"></div>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+      <section class="eindscherm">
+        <div class="scoreboard">
+          <div>
+            <h2>- UW SCORE -</h2>
+            <p class="eindscherm-punten">placeholder</p>
+            <h3>punten</h3>
+            <p>5 punten verloren</p>
+            <p>12 punten gewonnen</p>
+          </div>
+          <div class="leaderboard">
+            <div class="leaderboard">
+              <table id="leaderboardTable">
+                <tr>
+                  <th>Player Name</th>
+                  <th>Score</th>
+                  <th>Date Achieved</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="buttons-eindscherm">
+          <button>Replay</button>
+          <button>Afrekenen</button>
+        </div>
+      </section>
+    </main>
 
   <footer></footer>
 </body>
