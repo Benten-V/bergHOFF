@@ -17,7 +17,7 @@
   const kast = document.querySelector(".keuken-zoom-img-kast");
   const kastkeuken = document.querySelector(".main-kast");
   const closekast = document.querySelector(".close-kast");
-  frigo.addEventListener('click', () => openFrigo());
+  // frigo.addEventListener('click', () => openFrigo());
 
 
 document.addEventListener("DOMContentLoaded", function() {

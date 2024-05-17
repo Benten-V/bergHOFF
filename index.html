@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="item.js" defer></script>
+    <script src="main.js"></script>
+    <title>BergHOFF Game</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="item.js" defer></script>
-  <title>BergHOFF Game</title>
-</head>
+  <body>
+    <header></header>
 
-<body>
-  <header></header>
-
-  <main>
-    <h1 class="hidden">Berghoff game</h1>
-    <!-- <section class="opening-animation slide-out ">
+    <main>
+      <h1 class="hidden">Berghoff game</h1>
+      <!-- <section class="opening-animation slide-out ">
         <figure>
           <img src="./Images/Berghoff_black.png" alt="berghoff_black logo" />
         </figure>
       </section> -->
-    
-    <section class="main-section fade-in hidden">
-      <div class="slaapkamer-deur"></div>
-      <div class="table">
-        <div></div>
-        <div></div>
-      </div>
 
-      <div class="fig">
-        <div>
-          <div class="fig-1">
-            <figure>
-              <img src="./Images/drinkfles.png" alt="drinkfles" />
-            </figure>
+      <section class="main-section fade-in">
+        <div class="slaapkamer-deur button"></div>
+        <div class="table">
+          <div></div>
+          <div></div>
+        </div>
+
+        <div class="fig">
+          <div>
+            <div class="fig-1">
+              <figure>
+                <img src="./Images/drinkfles.png" alt="drinkfles" />
+              </figure>
+            </div>
+            <div class="fig-2">
+              <figure>
+                <img
+                  src="./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
+                  alt="platiek waterfles"
+                />
+              </figure>
+            </div>
           </div>
-          <div class="fig-2">
-            <figure>
-              <img src="./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png" alt="platiek waterfles" />
-            </figure>
+          <div>
+            <div class="fig-3">
+              <figure>
+                <img src="./Images/Lunchbox.png" alt="lunchbox" />
+              </figure>
+            </div>
+            <div class="fig-4">
+              <figure>
+                <img src="./Images/tin-foil.png" alt="tin foil" />
+              </figure>
+            </div>
           </div>
         </div>
-        <div>
-          <div class="fig-3">
-            <figure>
-              <img src="./Images/Lunchbox.png" alt="lunchbox" />
-            </figure>
-          </div>
-          <div class="fig-4">
-            <figure>
-              <img src="./Images/tin-foil.png" alt="tin foil" />
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
       <section class="main-keuken hidden">
         <div class="slaapkamer-terug button">Terug naar slaap- kamer</div>
@@ -173,7 +176,7 @@
           </div>
         </div>
       </section>
-      <section class="eindscherm">
+      <section class="eindscherm hidden">
         <div class="scoreboard">
           <div>
             <h2>- UW SCORE -</h2>
@@ -201,7 +204,6 @@
       </section>
     </main>
 
-  <footer></footer>
-</body>
-
+    <footer></footer>
+  </body>
 </html>
