@@ -1,115 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="item.js" defer></script>
-    <title>BergHOFF Game</title>
-  </head>
-  <body>
-    <header></header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="item.js" defer></script>
+  <title>BergHOFF Game</title>
+</head>
+<body>
+  <header></header>
 
-    <main>
-      <h1 class="hidden">Berghoff game</h1>
-      <!-- <section class="opening-animation slide-out ">
+  <main>
+    <h1 class="hidden">Berghoff game</h1>
+    <!-- <section class="opening-animation slide-out ">
         <figure>
           <img src="./Images/Berghoff_black.png" alt="berghoff_black logo" />
         </figure>
-      </section> -->
-      <section class="main-section fade-in hidden">
-        <div class="slaapkamer-deur"></div>
-        <div class="table">
-          <div></div>
-          <div></div>
-        </div>
+      </section> -->    
+    <section class="main-section fade-in hidden">
+      <div class="slaapkamer-deur"></div>
+      <div class="table">
+        <div></div>
+        <div></div>
+      </div>
 
-        <div class="fig">
-          <div>
-            <div class="fig-1">
-              <figure>
-                <img src="./Images/drinkfles.png" alt="drinkfles" />
-              </figure>
-            </div>
-            <div class="fig-2">
-              <figure>
-                <img
-                  src="./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
-                  alt="platiek waterfles"
-                />
-              </figure>
-            </div>
+      <div class="fig">
+        <div>
+          <div class="fig-1">
+            <figure>
+              <img src="./Images/drinkfles.png" alt="drinkfles" />
+            </figure>
           </div>
-          <div>
-            <div class="fig-3">
-              <figure>
-                <img src="./Images/Lunchbox.png" alt="lunchbox" />
-              </figure>
-            </div>
-            <div class="fig-4">
-              <figure>
-                <img src="./Images/tin-foil.png" alt="tin foil" />
-              </figure>
-            </div>
+          <div class="fig-2">
+            <figure>
+              <img src="./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png" alt="platiek waterfles" />
+            </figure>
           </div>
         </div>
-      </section>
+        <div>
+          <div class="fig-3">
+            <figure>
+              <img src="./Images/Lunchbox.png" alt="lunchbox" />
+            </figure>
+          </div>
+          <div class="fig-4">
+            <figure>
+              <img src="./Images/tin-foil.png" alt="tin foil" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="main-keuken">
-        <div class="keuken-img-frigo"></div>
-        <div class="keuken-img-micro"></div>
-        <div class="table-items">
-          <figure>
-            <img src="./Images/wooden-board.png" alt="houden board" />
-          </figure>
-        </div>
-      </section>
+    <section class="main-keuken">
+      <div class="leaderboard">
+        <table id="leaderboardTable">
+          <tr>
+            <th>Player Name</th>
+            <th>Score</th>
+            <th>Date Achieved</th>
+          </tr>
+        </table>
+      </div>
+      <div class="keuken-img-frigo"></div>
+      <div class="keuken-img-micro"></div>
+      <div class="table-items">
+        <figure>
+          <img src="./Images/wooden-board.png" alt="houden board" />
+        </figure>
+      </div>
+    </section>
 
-      <section class="main-frigo hidden">
-        <div class="frigo">
-          <div class="frigo-top">
-            <h2>Frigo</h2>
-            <figure><img src="./Images/close.png" alt="" /></figure>
-          </div>
-          <div class="list-frigo">
-            <div class="frigo-item">
-            </div>
-            <div class="frigo-item"></div>
-            <div class="frigo-item"></div>
-            <div class="frigo-item"></div>
-            <div class="frigo-item"></div>
-            <div class="frigo-item"></div>
-            <div class="frigo-item"></div>
-            <div class="frigo-item"></div>
-            <div class="frigo-item"></div>
-            <div class="frigo-item"></div>
-          </div>
+    <section class="main-frigo hidden">
+      <div class="frigo">
+        <div class="frigo-top">
+          <h2>Frigo</h2>
+          <figure><img src="./Images/close.png" alt="" /></figure>
         </div>
-      </section>
-      <section class="main-diepvries hidden">
-        <div class="diepvries">
-          <div class="diepvries-top">
-            <h2>Diepvries</h2>
-            <figure><img src="./Images/close.png" alt="" /></figure>
+        <div class="list-frigo">
+          <div class="frigo-item">
           </div>
-          <div class="diepvries-frigo">
-            <div class="diepvries-item">
-              <img src="./Images/placeholder.jpeg" alt="steak" />
-            </div>
-            <div class="diepvries-item"></div>
-            <div class="diepvries-item"></div>
-            <div class="diepvries-item"></div>
-            <div class="diepvries-item"></div>
-            <div class="diepvries-item"></div>
-            <div class="diepvries-item"></div>
-            <div class="diepvries-item"></div>
-            <div class="diepvries-item"></div>
-            <div class="diepvries-item"></div>
-          </div>
+          <div class="frigo-item"></div>
+          <div class="frigo-item"></div>
+          <div class="frigo-item"></div>
+          <div class="frigo-item"></div>
+          <div class="frigo-item"></div>
+          <div class="frigo-item"></div>
+          <div class="frigo-item"></div>
+          <div class="frigo-item"></div>
+          <div class="frigo-item"></div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+    <section class="main-diepvries hidden">
+      <div class="diepvries">
+        <div class="diepvries-top">
+          <h2>Diepvries</h2>
+          <figure><img src="./Images/close.png" alt="" /></figure>
+        </div>
+        <div class="diepvries-frigo">
+          <div class="diepvries-item">
+            <img src="./Images/placeholder.jpeg" alt="steak" />
+          </div>
+          <div class="diepvries-item"></div>
+          <div class="diepvries-item"></div>
+          <div class="diepvries-item"></div>
+          <div class="diepvries-item"></div>
+          <div class="diepvries-item"></div>
+          <div class="diepvries-item"></div>
+          <div class="diepvries-item"></div>
+          <div class="diepvries-item"></div>
+          <div class="diepvries-item"></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <footer></footer>
-  </body>
+  <footer></footer>
+</body>
+
 </html>

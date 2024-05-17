@@ -254,3 +254,32 @@ body {
 .hidden {
     display: none;
 }
+
+
+
+table {
+    width: auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    background: var(--white);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th, td {
+    display: block;
+}
+
+tr {
+    margin-bottom: 10px;
+}
+
+th {
+    font-weight: bold;
+}
