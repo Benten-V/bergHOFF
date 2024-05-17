@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="item.js" defer></script>
+    <script defer src="dialog.js"></script>
     <title>BergHOFF Game</title>
   </head>
   <body>
@@ -18,16 +19,7 @@
         </figure>
       </section> -->
 
-      <div class="dialog">
-        <div>
-          <div class="text-dialog">
-            <h2>Titel</h2>
-            <p>blablabla</p>
-          </div>
-          <button>next!</button>
-        </div>
-        <figure><img src="./Images/dialog-icon.png" alt="person" /></figure>
-      </div>
+
 
       <section class="main-section fade-in hidden">
         <div class="slaapkamer-deur"></div>
@@ -119,7 +111,18 @@
           </div>
         </div>
       </section>
-      <section class="dialogue-box"></section>
+      <section class="dialog-box">
+        <div class="dialog">
+          <div>
+            <div class="text-dialog">
+              <h1 class="title">test</h1>
+              <p class="text">testttt</p>
+            </div>
+            <button class="button_dialog">Next > </button>
+          </div>
+          <figure><img src="./Images/dialog-icon.png" alt="person" class="img_talking_person"/></figure>
+        </div>
+      </section>
     </main>
 
     <footer></footer>
