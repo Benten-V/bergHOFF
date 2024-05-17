@@ -256,6 +256,9 @@ body {
 }
 
 
+.leaderboard{
+    padding: 1rem;
+}
 
 table {
     width: auto;
