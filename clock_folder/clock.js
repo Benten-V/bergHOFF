@@ -19,7 +19,7 @@ const fillCircleOverTime = function (seconds) {
             ctx.closePath();
             ctx.fillStyle = circleColor;
             ctx.fill();
-            ctx.strokeStyle = circleColor;
+            ctx.strokeStyle = "black";
             ctx.stroke();
             circleSize += partition;
             if (circleSize > 1.8){
