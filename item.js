@@ -28,9 +28,19 @@
   }
   class Inventory {
     #items = [];
-    constructor(items) {
+    vleeslist = [];
+    groentenlist = [];
+    item1;
+    item2;
+    item3;
+
+    constructor(items, groentenlist, vleeslist) {
       this.#items = items;
       this.fridgeupdate();
+      this.groentenlist = groentenlist;
+      this.vleeslist = vleeslist;
+      this.randomizer();
+      this.update();
     }
     fridgeupdate() {
       const slotsList = document.querySelector(".list-inv");
@@ -41,8 +51,44 @@
         itemElement.src = item.getImg();
         itemElement.alt = item.getName();
         slots[i].appendChild(itemElement);
+        itemElement.addEventListener("click", () =>
+          this.moveItem(this.#items[i], itemElement)
+        );
         i++;
       });
+    }
+    moveItem(item, itemElement) {
+      sluitItem(frigovenster, keuken);
+      const groentenList = document.querySelector(".groenten");
+      const itemSlot = document.createElement("div");
+      groentenList.appendChild(itemSlot);
+      itemSlot.appendChild(itemElement);
+    }
+    randomizer() {
+      this.item1 = Math.round(Math.random() * (this.vleeslist.length - 1) + 1);
+      this.item2 = Math.round(
+        Math.random() * (this.groentenlist.length - 1) + 1
+      );
+      let x = Math.round(Math.random() * (this.groentenlist.length - 1) + 1);
+      if (this.item2 === x && x >= 2) {
+        this.item3 = x - 1;
+      } else if (this.item2 === x) {
+        this.item3 = x + 1;
+      } else {
+        this.item3 = x;
+      }
+      console.log(this.item1, this.item2, this.item3);
+      return this.item1, this.item2, this.item3;
+    }
+
+    update() {
+      const randomlijst = document.querySelector(".itemrandomlijst");
+      const randomli1 = randomlijst.querySelector(".item1");
+      const randomli2 = randomlijst.querySelector(".item2");
+      const randomli3 = randomlijst.querySelector(".item3");
+      randomli1.textContent = vleeslist[this.item1 - 1].getName();
+      randomli2.textContent = groetenlist[this.item2 - 1].getName();
+      randomli3.textContent = groetenlist[this.item3 - 1].getName();
     }
   }
   const steak = new vlees(
@@ -85,53 +131,57 @@
   let inventoryList = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
   let vleeslist = [steak, kip, beacon];
   let groetenlist = [sla, tomaat, komkommer, wortel];
-  const fridge = new Inventory(inventoryList);
+  const fridge = new Inventory(inventoryList, vleeslist, groetenlist);
 
-  class itemrandomizer {
-    lijst = [];
-    vleeslist = [];
-    groentenlist = [];
-    item1;
-    item2;
-    item3;
-    constructor(lijst, groentenlist, vleeslist) {
-      this.lijst = lijst;
-      this.groentenlist = groentenlist;
-      this.vleeslist = vleeslist;
-    }
+  //   class itemrandomizer {
+  //     lijst = [];
+  //     vleeslist = [];
+  //     groentenlist = [];
+  //     item1;
+  //     item2;
+  //     item3;
+  //     constructor(lijst, groentenlist, vleeslist) {
+  //       this.lijst = lijst;
+  //       this.groentenlist = groentenlist;
+  //       this.vleeslist = vleeslist;
+  //     }
 
-    randomizer() {
-      this.item1 = Math.round(Math.random() * (this.vleeslist.length - 1) + 1);
-      this.item2 = Math.round(
-        Math.random() * (this.groentenlist.length - 1) + 1
-      );
-      let x = Math.round(Math.random() * (this.groentenlist.length - 1) + 1);
-      if (this.item2 === x && x >= 2) {
-        this.item3 = x - 1;
-      } else if (this.item2 === x) {
-        this.item3 = x + 1;
-      } else {
-        this.item3 = x;
-      }
-      console.log(this.item1, this.item2, this.item3);
-    }
+  //     randomizer() {
+  //       this.item1 = Math.round(Math.random() * (this.vleeslist.length - 1) + 1);
+  //       this.item2 = Math.round(
+  //         Math.random() * (this.groentenlist.length - 1) + 1
+  //       );
+  //       let x = Math.round(Math.random() * (this.groentenlist.length - 1) + 1);
+  //       if (this.item2 === x && x >= 2) {
+  //         this.item3 = x - 1;
+  //       } else if (this.item2 === x) {
+  //         this.item3 = x + 1;
+  //       } else {
+  //         this.item3 = x;
+  //       }
+  //       console.log(this.item1, this.item2, this.item3);
+  //       return this.item1, this.item2, this.item3;
+  //     }
 
-    update() {
-      const randomlijst = document.querySelector(".itemrandomlijst");
-      const randomli1 = randomlijst.querySelector(".item1");
-      const randomli2 = randomlijst.querySelector(".item2");
-      const randomli3 = randomlijst.querySelector(".item3");
-      randomli1.textContent = vleeslist[this.item1 - 1].getName();
-      randomli2.textContent = groetenlist[this.item2 - 1].getName();
-      randomli3.textContent = groetenlist[this.item3 - 1].getName();
-    }
-  }
+  //     update() {
+  //       const randomlijst = document.querySelector(".itemrandomlijst");
+  //       const randomli1 = randomlijst.querySelector(".item1");
+  //       const randomli2 = randomlijst.querySelector(".item2");
+  //       const randomli3 = randomlijst.querySelector(".item3");
+  //       randomli1.textContent = vleeslist[this.item1 - 1].getName();
+  //       randomli2.textContent = groetenlist[this.item2 - 1].getName();
+  //       randomli3.textContent = groetenlist[this.item3 - 1].getName();
+  //     }
+  //     test() {
+  //       console.log(tester);
+  //     }
+  //   }
 
-  const itemRandomizer = new itemrandomizer(
-    inventoryList,
-    groetenlist,
-    vleeslist
-  );
-  itemRandomizer.randomizer();
-  itemRandomizer.update();
+  //   const itemRandomizer = new itemrandomizer(
+  //     inventoryList,
+  //     groetenlist,
+  //     vleeslist
+  //   );
+  //   itemRandomizer.randomizer();
+  //   const itemscijfers = itemRandomizer.update();
 })();
