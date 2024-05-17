@@ -1,5 +1,26 @@
 "use strict";
 (function () {
+  const frigo = document.querySelector(".keuken-img-frigo");
+  const keuken = document.querySelector(".main-keuken");
+  const frigovenster = document.querySelector(".main-frigo");
+  const closeFrigo = document.querySelector(".close-frigo");
+  const microgolf = document.querySelector(".keuken-img-micro");
+  const diepvries = document.querySelector(".keuken-img-diepvries");
+  const diepvriesvenster = document.querySelector(".main-diepvries");
+  const closeDiepvries = document.querySelector(".close-diepvries");
+  const slaapkamerdeur = document.querySelector(".slaapkamer-deur");
+  const mainsection = document.querySelector(".main-section");
+  const slaapkamerterug = document.querySelector(".slaapkamer-terug");
+  const zoom = document.querySelector(".zoom");
+  const keukenzoom = document.querySelector(".main-keuken-zoom");
+  const terugkeuken = document.querySelector(".terug-zoom");
+  const kast = document.querySelector(".keuken-zoom-img-kast");
+  const kastkeuken = document.querySelector(".main-kast");
+  const closekast = document.querySelector(".close-kast");
+  const sluitItem = function (verborgen, zichtbaar) {
+    zichtbaar.classList.remove("hidden");
+    verborgen.classList.add("hidden");
+  };
   class Item {
     #name;
     #img;
@@ -52,10 +73,13 @@
         itemElement.alt = item.getName();
         slots[i].appendChild(itemElement);
         itemElement.addEventListener("click", () =>
-          this.moveItem(this.#items[i], itemElement)
+          this.checkitem(this.#items[i], itemElement)
         );
         i++;
       });
+
+      //het probleem nu is dat this.#item[i] is undefined aangezien het in een loop zit maar ik moet deze waarde hebben
+      // maar ik heb geen idee hoe ik deze kan onthouden.
     }
     moveItem(item, itemElement) {
       sluitItem(frigovenster, keuken);
@@ -78,7 +102,6 @@
         this.item3 = x;
       }
       console.log(this.item1, this.item2, this.item3);
-      return this.item1, this.item2, this.item3;
     }
 
     update() {
@@ -89,6 +112,21 @@
       randomli1.textContent = vleeslist[this.item1 - 1].getName();
       randomli2.textContent = groetenlist[this.item2 - 1].getName();
       randomli3.textContent = groetenlist[this.item3 - 1].getName();
+    }
+
+    checkitem(item, itemElement) {
+      console.log(item);
+      console.log(itemElement);
+      console.log(vleeslist[this.item1 - 1].getName());
+      console.log(groetenlist[this.item2 - 1].getName());
+      console.log(groetenlist[this.item3 - 1].getName());
+      if (item === this.item3.getName()) {
+        if (nummer === item1) {
+          this.moveItem(item, itemElement);
+        } else {
+          console.log("kan niet (ik ga dit nog beter maken)");
+        }
+      }
     }
   }
   const steak = new vlees(
