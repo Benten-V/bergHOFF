@@ -87,7 +87,7 @@
   let groetenlist = [sla, tomaat, komkommer, wortel];
   const fridge = new Inventory(inventoryList);
 
-  class itemRandomizer {
+  class itemrandomizer {
     lijst = [];
     vleeslist = [];
     groentenlist = [];
@@ -101,18 +101,34 @@
     }
 
     randomizer() {
-      this.item1 =
-        Math.random() * (this.vleeslist.length - 1 - 1) +
-        this.vleeslist.length -
-        1;
-      this.item2 =
-        Math.random() * (this.groentenlist.length - 1 - 1) +
-        this.groentenlist.length -
-        1;
-        let x = Math.random() * (this.groentenlist.length - 1 - 1) +
-        this.groentenlist.length -
-        1;
-        if ()
+      this.item1 = Math.round(
+        Math.random() * (this.vleeslist.length - 1) + 1
+      );
+      this.item2 = Math.round(
+        Math.random() * (this.groentenlist.length - 1) + 1
+      );
+      let x = Math.round(
+        Math.random() * (this.groentenlist.length - 1) + 1
+      );
+      if (this.item2 === x && x >= 2) {
+        this.item3 = x - 1;
+      } else if (this.item2 === x) {
+        this.item3 = x + 1;
+      } else {
+        this.item3 = x;
+      }
+      console.log(this.item1, this.item2, this.item3);
+    }
+
+    update() {
+        
     }
   }
+
+  const itemRandomizer = new itemrandomizer(
+    inventoryList,
+    groetenlist,
+    vleeslist
+  );
+  itemRandomizer.randomizer();
 })();
