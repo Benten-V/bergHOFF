@@ -110,9 +110,9 @@
       const randomli1 = randomlijst.querySelector(".item1");
       const randomli2 = randomlijst.querySelector(".item2");
       const randomli3 = randomlijst.querySelector(".item3");
-      randomli1.textContent = vleeslist[this.item1 - 1].getName();
-      randomli2.textContent = groetenlist[this.item2 - 1].getName();
-      randomli3.textContent = groetenlist[this.item3 - 1].getName();
+      randomli1.textContent = this.vleeslist[this.item1 - 1].getName();
+      randomli2.textContent = this.groentenlist[this.item2 - 1].getName();
+      randomli3.textContent = this.groentenlist[this.item3 - 1].getName();
     }
 
     checkitem(item, itemElement) {
@@ -122,13 +122,16 @@
       //   console.log(groetenlist[this.item2 - 1].getName());
       //   console.log(groetenlist[this.item3 - 1].getName());
 
-
       // werkt bijna enige probleem is da ge niet meerdere groenten kunt plaatsen
+      // werkt blijkbaar niet
+      console.log(this.vleeslist[this.item1 - 1].getName());
+      console.log(this.groentenlist[this.item2 - 1].getName());
+      console.log(this.groentenlist[this.item3 - 1].getName());
 
       if (
-        item.getName() === this.vleeslist[this.item1].getName() ||
-        item.getName() === this.groentenlist[this.item2].getName() ||
-        item.getName() === this.groentenlist[this.item3].getName()
+        item.getName() === this.vleeslist[this.item1 - 1].getName() ||
+        item.getName() === this.groentenlist[this.item2 - 1].getName() ||
+        item.getName() === this.groentenlist[this.item3 - 1].getName()
       ) {
         this.moveItem(item, itemElement);
         console.log("replace");
@@ -177,7 +180,7 @@
   let inventoryList = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
   let vleeslist = [steak, kip, beacon];
   let groetenlist = [sla, tomaat, komkommer, wortel];
-  const fridge = new Inventory(inventoryList, vleeslist, groetenlist);
+  const fridge = new Inventory(inventoryList, groetenlist, vleeslist);
 
   //   class itemrandomizer {
   //     lijst = [];
