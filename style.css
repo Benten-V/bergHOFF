@@ -42,6 +42,10 @@ button {
     top: 0;
 }
 
+.overlay-link:focus {
+    border: #fff45f 1px solid;
+}
+
 
 img {
     max-width: 100%;
@@ -280,6 +284,7 @@ body {
 .close-frigo {
     background-color: transparent;
     border: none;
+    position: relative;
 }
 
 .main-frigo {
@@ -355,6 +360,13 @@ body {
 .close-diepvries {
     background-color: transparent;
     border: none;
+    position: relative;
+}
+
+.close-button {
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .groenten {
@@ -411,6 +423,13 @@ body {
 .close-kast {
     background-color: transparent;
     border: none;
+    position: relative;
+}
+
+.close-button {
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 
@@ -468,6 +487,17 @@ body {
     transform: translateY(-50%);
 }
 
+.damkap {
+    height: 2rem;
+    position: absolute;
+    left: 39%;
+    top: 13%;
+}
+
+.damkap button {
+    height: 100%;
+    width: 2rem;
+}
 
 
 

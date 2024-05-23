@@ -102,7 +102,11 @@
       } else {
         this.item3 = x;
       }
-      console.log(this.item1, this.item2, this.item3);
+      console.log(this.geefeten());
+    }
+
+    geefeten() {
+      return [this.item1, this.item2, this.item3];
     }
 
     update() {
