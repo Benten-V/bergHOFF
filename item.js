@@ -85,7 +85,7 @@
     moveItem(item, itemElement) {
       sluitItem(frigovenster, keuken);
       const groentenList = document.querySelector(".groenten");
-      const itemSlot = document.createElement("div");
+      const itemSlot = document.createElement("button");
       groentenList.appendChild(itemSlot);
       itemSlot.appendChild(itemElement);
     }
