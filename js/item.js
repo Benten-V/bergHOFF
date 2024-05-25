@@ -54,6 +54,10 @@
     item1;
     item2;
     item3;
+    etencount = 0;
+    itemcount1 = 0;
+    itemcount2 = 0;
+    itemcount3 = 0;
 
     constructor(items, groentenlist, vleeslist) {
       this.#items = items;
@@ -80,8 +84,6 @@
       });
     }
 
-    //het probleem nu is dat this.#item[i] is undefined aangezien het in een loop zit maar ik moet deze waarde hebben
-    // maar ik heb geen idee hoe ik deze kan onthouden.
     moveItem(item, itemElement) {
       sluitItem(frigovenster, keuken);
       const groentenList = document.querySelector(".groenten");
@@ -102,7 +104,7 @@
       } else {
         this.item3 = x;
       }
-      console.log(this.geefeten());
+      // console.log(this.geefeten());
     }
 
     geefeten() {
@@ -128,20 +130,32 @@
 
       // werkt bijna enige probleem is da ge niet meerdere groenten kunt plaatsen
       // werkt blijkbaar niet
-      console.log(this.vleeslist[this.item1 - 1].getName());
-      console.log(this.groentenlist[this.item2 - 1].getName());
-      console.log(this.groentenlist[this.item3 - 1].getName());
+      // console.log(this.vleeslist[this.item1 - 1].getName());
+      // console.log(this.groentenlist[this.item2 - 1].getName());
+      // console.log(this.groentenlist[this.item3 - 1].getName());
 
       if (
-        item.getName() === this.vleeslist[this.item1 - 1].getName() ||
-        item.getName() === this.groentenlist[this.item2 - 1].getName() ||
-        item.getName() === this.groentenlist[this.item3 - 1].getName()
+        item.getName() === this.vleeslist[this.item1 - 1].getName() &&
+        this.itemcount1 == 0
       ) {
         this.moveItem(item, itemElement);
-        console.log("replace");
+        this.itemcount1 = 1;
+      } else if (
+        item.getName() === this.groentenlist[this.item2 - 1].getName() &&
+        this.itemcount2 == 0
+      ) {
+        this.moveItem(item, itemElement);
+        this.itemcount2 = 1;
+      } else if (
+        item.getName() === this.groentenlist[this.item3 - 1].getName() &&
+        this.itemcount3 == 0
+      ) {
+        this.moveItem(item, itemElement);
+        this.itemcount3 = 1;
       } else {
-        console.log("kan niet (ik ga dit nog beter maken)");
+        console.log("Foute groente || groenten op bureau geclickt");
       }
+      console.log("replace");
     }
   }
   const steak = new vlees(
