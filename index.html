@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="./item.js" defer></script>
+    <script src="./js/item.js" defer></script>
     <script src="./main.js" defer></script>
-    <script src="./punten.js " type="module"></script>
-    <script src="./eindscherm.js" type="module"></script>
+    <script src="./js/punten.js " type="module"></script>
+    <script src="./js/eindscherm.js" type="module"></script>
+    <script src="./js/dampkap.js" type="module"></script>
     <title>BergHOFF Game</title>
   </head>
 
@@ -21,7 +22,7 @@
           <img src="./Images/Berghoff_black.png" alt="berghoff_black logo" />
         </figure>
       </section> -->
-      <section class="main-section fade-in">
+      <section class="main-section fade-in hidden">
         <h2 class="hidden">keuken</h2>
         <button class="slaapkamer-deur button"></button>
         <div class="table">
@@ -152,13 +153,13 @@
         </div>
       </section>
 
-      <section class="main-keuken-zoom hidden">
+      <section class="main-keuken-zoom">
         <h2 class="hidden">keuken-zoom</h2>
         <button class="keuken-zoom-img-kast button"></button>
-        <div class="damkap">
-          <button class="button"></button>
-          <button class="button"></button>
-          <button class="button"></button>
+        <div class="dampkap">
+          <button class="button damp1"></button>
+          <button class="button damp2"></button>
+          <button class="button damp3"></button>
         </div>
         <button class="terug-zoom button">terug naar keuken</button>
       </section>

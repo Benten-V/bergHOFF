@@ -487,16 +487,17 @@ body {
     transform: translateY(-50%);
 }
 
-.damkap {
+.dampkap {
     height: 2rem;
     position: absolute;
     left: 39%;
     top: 13%;
 }
 
-.damkap button {
+.dampkap button {
     height: 100%;
     width: 2rem;
+    border-radius: 1rem;
 }
 
 
