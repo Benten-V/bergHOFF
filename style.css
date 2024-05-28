@@ -346,6 +346,15 @@ body {
     width: 6%;
 }
 
+.pottendiv {
+    position: absolute;
+    height: 40vh;
+    width: 25vw;
+    left: 32vw;
+    top: 40vh;
+    display: flex;
+}
+
 /* keuken zoom kast */
 
 .main-kast {
@@ -593,7 +602,7 @@ body {
 }
 
 
-.leaderboard{
+.leaderboard {
     padding: 1rem;
     font-family: sans-serif;
 }
