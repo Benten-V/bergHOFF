@@ -12,7 +12,7 @@ class punten {
 
   minPunten(punt) {
     this.punten -= punt;
-    this.minPuntencount += 1;
+    this.minPuntenCount += 1;
   }
 
   resetPunten() {
@@ -23,7 +23,7 @@ class punten {
     return this.punten;
   }
   showMinPunten() {
-    return this.minPuntencount;
+    return this.minPuntenCount;
   }
 }
 

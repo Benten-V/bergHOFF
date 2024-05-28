@@ -689,7 +689,7 @@ body {
 } */
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1100px) {
     .dampkap {
         width: auto;
         top: 22vh;
@@ -714,7 +714,7 @@ body {
     }
 
     .keuken-img-micro h2 {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .keuken-img-frigo {
@@ -728,6 +728,24 @@ body {
     .slaapkamer-deur {
         width: 16vw;
         height: 51vh;
+    }
+
+    .inv {
+        height: 70%;
+        width: 80%;
+    }
+
+    .inv-top {
+        font-size: 1.5rem;
+    }
+
+    .list-inv {
+        margin-inline: 2rem;
+    }
+
+    .inv-item {
+        width: 8rem;
+        height: 8rem;
     }
 }
 
