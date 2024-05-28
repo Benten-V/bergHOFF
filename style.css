@@ -490,8 +490,8 @@ body {
 .dampkap {
     height: 2rem;
     position: absolute;
-    left: 39%;
-    top: 13%;
+    left: 39vw;
+    top: 13vh;
 }
 
 .dampkap button {
@@ -588,7 +588,7 @@ body {
 }
 
 
-@media screen and (min-width: 950px) and (min-height: 650px) {
+/* @media screen and (min-width: 950px) and (min-height: 650px) {
 
     .keuken-img-micro {
         left: 9%;
@@ -611,7 +611,7 @@ body {
         width: 20%;
     }
 
-}
+} */
 
 /* @media screen and (min-height: 650px) {
     .slaapkamer-deur {
@@ -620,7 +620,7 @@ body {
     }
 } */
 
-@media screen and (min-width: 1050px) and (min-height: 650px) {
+/* @media screen and (min-width: 1050px) and (min-height: 650px) {
     .inv {
         width: 50rem;
         height: 26rem;
@@ -640,10 +640,10 @@ body {
         border-radius: .6rem;
     }
 
-}
+} */
 
 
-@media screen and (min-width: 1350px) and (min-height: 650px) {
+/* @media screen and (min-width: 1350px) and (min-height: 650px) {
     .inv {
         width: 70rem;
         height: 30rem;
@@ -670,24 +670,66 @@ body {
         border-radius: .6rem;
     }
 
-}
+} */
 
 
-@media screen and (min-width: 1050px) and (min-height: 750px) {
+/* @media screen and (min-width: 1050px) and (min-height: 750px) {
     .slaapkamer-deur {
         height: 50%;
         width: 15%;
     }
-}
+} */
 
 
-@media screen and (min-width: 1400px) and (min-height: 850px) {
+/* @media screen and (min-width: 1400px) and (min-height: 850px) {
     .slaapkamer-deur {
         height: 50%;
         width: 15%;
     }
-}
+} */
 
+
+@media screen and (min-width: 1200px) {
+    .dampkap {
+        width: auto;
+        top: 22vh;
+        left: 40vw;
+        gap: 3rem;
+    }
+
+    .dampkap button {
+        margin-inline: .5rem;
+    }
+
+    .keuken-zoom-img-kast {
+        height: 39vh;
+    }
+
+    .keuken-img-micro {
+        left: 10vw;
+        height: 20vh;
+        top: 25vh;
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .keuken-img-micro h2 {
+        font-size: 1.3rem;
+    }
+
+    .keuken-img-frigo {
+        width: 20vw;
+    }
+
+    .keuken-img-diepvries {
+        width: 20vw;
+    }
+
+    .slaapkamer-deur {
+        width: 16vw;
+        height: 51vh;
+    }
+}
 
 .hidden {
     display: none;
