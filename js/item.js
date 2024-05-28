@@ -18,6 +18,7 @@
   const terugkeuken = document.querySelector(".terug-zoom");
   const kast = document.querySelector(".keuken-zoom-img-kast");
   const kastkeuken = document.querySelector(".main-kast");
+  const fornuis = document.querySelector(".fornuis");
   const closekast = document.querySelector(".close-kast");
   const sluitItem = function (verborgen, zichtbaar) {
     zichtbaar.classList.remove("hidden");
@@ -51,10 +52,11 @@
   }
   class Inventory {
     #items = [];
+    #startlocatie;
     constructor(items) {
       this.#items = items;
     }
-    inventoryUpdate(inventory, locatie) {
+    inventoryUpdate(inventory, locatie, inventoryVenster) {
       const slotsList = inventory.querySelector(".list-inv");
       const slots = slotsList.querySelectorAll(".inv-item");
       let i = 0;
@@ -64,12 +66,12 @@
         itemElement.alt = item.getName();
         slots[i].appendChild(itemElement);
         itemElement.addEventListener("click", () => {
-          this.checkitem(item, itemElement, locatie);
+          this.checkitem(item, itemElement, locatie, inventoryVenster);
         });
         i++;
       });
     }
-    checkitem(item, itemElement, locatie) {
+    checkitem(item, itemElement, locatie, inventoryVenster) {
       //   console.log(item);
       //   console.log(itemElement);
       //   console.log(vleeslist[this.item1 - 1].getName());
@@ -82,30 +84,33 @@
         item.getName() === this.vleeslist[this.item1 - 1].getName() &&
         this.itemcount1 == 0
       ) {
-        this.moveItem(item, itemElement);
+        this.moveItem(item, itemElement, locatie , inventoryVenster);
         this.itemcount1 = 1;
       } else if (
         item.getName() === this.groentenlist[this.item2 - 1].getName() &&
         this.itemcount2 == 0
       ) {
-        this.moveItem(item, itemElement);
+        this.moveItem(item, itemElement, locatie , inventoryVenster);
         this.itemcount2 = 1;
       } else if (
         item.getName() === this.groentenlist[this.item3 - 1].getName() &&
         this.itemcount3 == 0
       ) {
-        this.moveItem(item, itemElement);
+        this.moveItem(item, itemElement, locatie , inventoryVenster);
         this.itemcount3 = 1;
       } else {
         console.log("Foute groente || groenten op bureau geclickt");
       }
       console.log("replace");
     }
-    moveItem(item, itemElement, locatie) {
-      sluitItem(frigovenster, keuken);
+    moveItem(item, itemElement, locatie, inventoryVenster) {
+      sluitItem(inventoryVenster, this.#startlocatie);
       const itemSlot = document.createElement("div");
       locatie.appendChild(itemSlot);
       itemSlot.appendChild(itemElement);
+    }
+    setStartLocatie(startlocatie) {
+      this.#startlocatie = startlocatie;
     }
   }
   class Fridge extends Inventory {
@@ -122,11 +127,11 @@
       super(items);
       this.groentenlist = groentenlist;
       this.vleeslist = vleeslist;
-      super.inventoryUpdate(frigoInv, groentenplek);
+      super.setStartLocatie(keuken);
+      super.inventoryUpdate(frigoInv, groentenplek, frigovenster);
       this.randomizer();
       this.update();
     }
-
     //het probleem nu is dat this.#item[i] is undefined aangezien het in een loop zit maar ik moet deze waarde hebben
     // maar ik heb geen idee hoe ik deze kan onthouden.
 
@@ -154,6 +159,19 @@
       randomli1.textContent = this.vleeslist[this.item1 - 1].getName();
       randomli2.textContent = this.groentenlist[this.item2 - 1].getName();
       randomli3.textContent = this.groentenlist[this.item3 - 1].getName();
+    }
+    checkitem(item, itemElement, locatie, inventoryVenster) {
+      super.checkitem(item, itemElement, locatie, inventoryVenster);
+    }
+  }
+  class Kast extends Inventory{
+    constructor(items) {
+      super(items);
+      super.setStartLocatie(keukenzoom);
+      super.inventoryUpdate(kastkeuken, fornuis, kastkeuken)
+    }
+    checkitem(item, itemElement, locatie, inventoryVenster) {
+      super.moveItem(item, itemElement, locatie, inventoryVenster);
     }
   }
   const steak = new vlees(
@@ -192,11 +210,47 @@
     "wortel",
     "./Images/carrot-illustration-with-leaf-png.webp"
   );
+  const pan1 = new Item(
+      "pan",
+      "./Images/pan_1.png"
+  );
+  const pan2 = new Item(
+      "pan",
+      "./Images/pan_2.png"
+  );
+  const pan3 = new Item(
+      "vuile pan",
+      "./Images/vuile_pan_1.png"
+  );
+  const pan4 = new Item(
+      "snelkook pan",
+      "./Images/snelkook_pan.png"
+  );
+  const pan5 = new Item(
+      "tefal pan",
+      "../Images/tefal_pan.png"
+  );
+  const kookpot1 = new Item(
+      "kookpot",
+      "./Images/kookpot_1.png"
+  );
 
-  let inventoryList = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
+  const kookpot2 = new Item(
+      "kookpot",
+      "./Images/kookpot_2.png"
+  );
+
+  const kookpot3 = new Item(
+      "kookpot",
+      "./Images/kookpot_2.png"
+  );
+
+  let inventoryList1 = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
+  let inventoryList2 = [pan1,pan2,pan3,pan4,pan5,kookpot1,kookpot2,kookpot3];
   let vleeslist = [steak, kip, beacon];
   let groetenlist = [sla, tomaat, komkommer, wortel];
-  const fridge = new Fridge(inventoryList, groetenlist, vleeslist);
+  const fridge = new Fridge(inventoryList1, groetenlist, vleeslist);
+  const closet = new Kast(inventoryList2);
 
   //   class itemrandomizer {
   //     lijst = [];
