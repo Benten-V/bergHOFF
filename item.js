@@ -1,7 +1,9 @@
 "use strict";
 (function () {
   const frigo = document.querySelector(".keuken-img-frigo");
+  const frigoInv = document.querySelector(".frigo")
   const keuken = document.querySelector(".main-keuken");
+  const groentenplek = document.querySelector(".groenten")
   const frigovenster = document.querySelector(".main-frigo");
   const closeFrigo = document.querySelector(".close-frigo");
   const microgolf = document.querySelector(".keuken-img-micro");
@@ -49,22 +51,11 @@
   }
   class Inventory {
     #items = [];
-    vleeslist = [];
-    groentenlist = [];
-    item1;
-    item2;
-    item3;
-
-    constructor(items, groentenlist, vleeslist) {
+    constructor(items) {
       this.#items = items;
-      this.fridgeupdate();
-      this.groentenlist = groentenlist;
-      this.vleeslist = vleeslist;
-      this.randomizer();
-      this.update();
     }
-    fridgeupdate() {
-      const slotsList = document.querySelector(".list-inv");
+    inventoryUpdate(inventory, locatie) {
+      const slotsList = inventory.querySelector(".list-inv");
       const slots = slotsList.querySelectorAll(".inv-item");
       let i = 0;
       this.#items.forEach((item) => {
@@ -72,23 +63,62 @@
         itemElement.src = item.getImg();
         itemElement.alt = item.getName();
         slots[i].appendChild(itemElement);
-
         itemElement.addEventListener("click", () => {
-          this.checkitem(item, itemElement);
+          this.checkitem(item, itemElement, locatie);
         });
         i++;
       });
     }
+    checkitem(item, itemElement, locatie) {
+      //   console.log(item);
+      //   console.log(itemElement);
+      //   console.log(vleeslist[this.item1 - 1].getName());
+      //   console.log(groetenlist[this.item2 - 1].getName());
+      //   console.log(groetenlist[this.item3 - 1].getName());
+
+      // werkt bijna enige probleem is da ge niet meerdere groenten kunt plaatsen
+      // werkt blijkbaar niet
+      console.log(this.vleeslist[this.item1 - 1].getName());
+      console.log(this.groentenlist[this.item2 - 1].getName());
+      console.log(this.groentenlist[this.item3 - 1].getName());
+
+      if (
+          item.getName() === this.vleeslist[this.item1 - 1].getName() ||
+          item.getName() === this.groentenlist[this.item2 - 1].getName() ||
+          item.getName() === this.groentenlist[this.item3 - 1].getName()
+      ) {
+        this.moveItem(item, itemElement, locatie);
+        console.log("replace");
+      } else {
+        console.log("kan niet (ik ga dit nog beter maken)");
+      }
+    }
+    moveItem(item, itemElement, locatie) {
+      sluitItem(frigovenster, keuken);
+      const itemSlot = document.createElement("div");
+      locatie.appendChild(itemSlot);
+      itemSlot.appendChild(itemElement);
+    }
+  }
+  class Fridge extends Inventory {
+    vleeslist = [];
+    groentenlist = [];
+    item1;
+    item2;
+    item3;
+
+    constructor(items, groentenlist, vleeslist) {
+      super(items);
+      this.groentenlist = groentenlist;
+      this.vleeslist = vleeslist;
+      super.inventoryUpdate(frigoInv, groentenplek)
+      this.randomizer();
+      this.update();
+    }
 
     //het probleem nu is dat this.#item[i] is undefined aangezien het in een loop zit maar ik moet deze waarde hebben
     // maar ik heb geen idee hoe ik deze kan onthouden.
-    moveItem(item, itemElement) {
-      sluitItem(frigovenster, keuken);
-      const groentenList = document.querySelector(".groenten");
-      const itemSlot = document.createElement("div");
-      groentenList.appendChild(itemSlot);
-      itemSlot.appendChild(itemElement);
-    }
+
     randomizer() {
       this.item1 = Math.round(Math.random() * (this.vleeslist.length - 1) + 1);
       this.item2 = Math.round(
@@ -115,30 +145,6 @@
       randomli3.textContent = this.groentenlist[this.item3 - 1].getName();
     }
 
-    checkitem(item, itemElement) {
-      //   console.log(item);
-      //   console.log(itemElement);
-      //   console.log(vleeslist[this.item1 - 1].getName());
-      //   console.log(groetenlist[this.item2 - 1].getName());
-      //   console.log(groetenlist[this.item3 - 1].getName());
-
-      // werkt bijna enige probleem is da ge niet meerdere groenten kunt plaatsen
-      // werkt blijkbaar niet
-      console.log(this.vleeslist[this.item1 - 1].getName());
-      console.log(this.groentenlist[this.item2 - 1].getName());
-      console.log(this.groentenlist[this.item3 - 1].getName());
-
-      if (
-        item.getName() === this.vleeslist[this.item1 - 1].getName() ||
-        item.getName() === this.groentenlist[this.item2 - 1].getName() ||
-        item.getName() === this.groentenlist[this.item3 - 1].getName()
-      ) {
-        this.moveItem(item, itemElement);
-        console.log("replace");
-      } else {
-        console.log("kan niet (ik ga dit nog beter maken)");
-      }
-    }
   }
   const steak = new vlees(
     "steak",
@@ -180,7 +186,7 @@
   let inventoryList = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
   let vleeslist = [steak, kip, beacon];
   let groetenlist = [sla, tomaat, komkommer, wortel];
-  const fridge = new Inventory(inventoryList, groetenlist, vleeslist);
+  const fridge = new Fridge(inventoryList, groetenlist, vleeslist);
 
   //   class itemrandomizer {
   //     lijst = [];
