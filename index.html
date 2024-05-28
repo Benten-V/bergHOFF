@@ -1,147 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="./js/item.js" defer></script>
-    <script src="./main.js" defer></script>
-    <script src="./js/punten.js " type="module"></script>
-    <script src="./js/eindscherm.js" type="module"></script>
-    <script src="./js/dampkap.js" type="module"></script>
-    <title>BergHOFF Game</title>
-  </head>
 
-  <body>
-    <header></header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="./js/item.js" defer></script>
+  <script src="./main.js" defer></script>
+  <script src="./js/punten.js " type="module"></script>
+  <script src="./js/eindscherm.js" type="module"></script>
+  <script src="./js/dampkap.js" type="module"></script>
+  <script src="./js/dialogue.js" type="module"></script>
+  <title>BergHOFF Game</title>
+</head>
 
-    <main>
-      <h1 class="hidden">Berghoff game</h1>
-      <!-- <section class="opening-animation slide-out ">
+<body>
+  <header></header>
+
+  <main>
+    <h1 class="hidden">Berghoff game</h1>
+    <!-- <section class="opening-animation slide-out ">
         <figure>
           <img src="./Images/Berghoff_black.png" alt="berghoff_black logo" />
         </figure>
       </section> -->
-      <section class="main-section fade-in hidden">
-        <h2 class="hidden">keuken</h2>
-        <button class="slaapkamer-deur button"></button>
-        <div class="table">
-          <div></div>
-          <div></div>
-        </div>
+    <section class="main-section fade-in hidden">
+      <h2 class="hidden">keuken</h2>
+      <button class="slaapkamer-deur button"></button>
+      <div class="table">
+        <div></div>
+        <div></div>
+      </div>
 
-        <div class="fig">
-          <div>
-            <div class="fig-1">
-              <figure>
-                <img src="./Images/drinkfles.png" alt="drinkfles" />
-                <a href="" class="overlay-link"></a>
-              </figure>
-            </div>
-            <div class="fig-2">
-              <figure>
-                <img
+      <div class="fig">
+        <div>
+          <div class="fig-1">
+            <figure>
+              <a href="#" class="dialogue-link good-dialogue"><img src="./Images/drinkfles.png" alt="drinkfles" /></a>
+            </figure>
+          </div>
+          <div class="fig-2">
+            <figure>
+              <a href="#" class="dialogue-link bad-dialogue"><img
                   src="./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
-                  alt="platiek waterfles"
-                />
-                <a href="" class="overlay-link"></a>
-              </figure>
-            </div>
+                  alt="platiek waterfles" /></a>
+            </figure>
           </div>
-          <div>
-            <div class="fig-3">
-              <figure>
-                <img src="./Images/Lunchbox.png" alt="lunchbox" />
-                <a href="" class="overlay-link"></a>
-              </figure>
-            </div>
-            <div class="fig-4">
-              <figure>
-                <img src="./Images/tin-foil.png" alt="tin foil" />
-                <a href="" class="overlay-link"></a>
-              </figure>
-            </div>
+          <div class="fig-3">
+            <figure>
+              <a href="#" class="dialogue-link good-dialogue"><img src="./Images/Lunchbox.png" alt="lunchbox" /></a>
+            </figure>
+          </div>
+          <div class="fig-4">
+            <figure>
+              <a href="#" class="dialogue-link bad-dialogue"><img src="./Images/tin-foil.png" alt="tin foil" /></a>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="main-keuken hidden">
+      <button class="slaapkamer-terug button">Terug naar slaap- kamer</button>
+      <button class="zoom button">Zoom in</button>
+      <button class="keuken-img-frigo button"></button>
+      <button class="keuken-img-diepvries button"></button>
+      <div class="keuken-img-micro">
+        <h2>Gerechtonderdelen</h2>
+        <ul class="itemrandomlijst">
+          <li class="item1"></li>
+          <li class="item2"></li>
+          <li class="item3"></li>
+        </ul>
+      </div>
+
+      <div class="messen">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="table-items">
+        <figure>
+          <img src="./Images/wooden-board.png" alt="houden board" />
+        </figure>
+      </div>
+      <div class="groenten"></div>
+    </section>
+
+    <section class="main-frigo">
+      <div class="frigo inv">
+        <div class="inv-top">
+          <h2>Frigo</h2>
+          <div class="close-frigo">
+            <button class="close-frigo close-button"></button>
+            <figure>
+              <img src="./Images/close.png" alt="" class="close-frigo" />
+            </figure>
           </div>
         </div>
-      </section>
-
-      <section class="main-keuken hidden">
-        <button class="slaapkamer-terug button">Terug naar slaap- kamer</button>
-        <button class="zoom button">Zoom in</button>
-        <button class="keuken-img-frigo button"></button>
-        <button class="keuken-img-diepvries button"></button>
-        <div class="keuken-img-micro">
-          <h2>Gerechtonderdelen</h2>
-          <ul class="itemrandomlijst">
-            <li class="item1"></li>
-            <li class="item2"></li>
-            <li class="item3"></li>
-          </ul>
-        </div>
-
-        <div class="messen">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="table-items">
-          <figure>
-            <img src="./Images/wooden-board.png" alt="houden board" />
-          </figure>
-        </div>
-        <div class="groenten"></div>
-      </section>
-
-      <section class="main-frigo">
-        <div class="frigo inv">
-          <div class="inv-top">
-            <h2>Frigo</h2>
-            <div class="close-frigo">
-              <button class="close-frigo close-button"></button>
-              <figure>
-                <img src="./Images/close.png" alt="" class="close-frigo" />
-              </figure>
-            </div>
-          </div>
-          <div class="list-inv">
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></bu>
+        <div class="list-inv">
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></bu>
             <button class="inv-item"></button>
             <button class="inv-item"></button>
             <button class="inv-item"></button>
             <button class="inv-item"></bu>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
+              <button class="inv-item"></button>
+              <button class="inv-item"></button>
+              <button class="inv-item"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-diepvries hidden">
+      <div class="diepvries inv">
+        <div class="inv-top">
+          <h2>Diepvries</h2>
+          <div class="close-diepvries">
+            <button class="close-diepvries close-button"></button>
+            <figure>
+              <img src="./Images/close.png" alt="" class="close-diepvries" />
+            </figure>
           </div>
         </div>
-      </section>
-
-      <section class="main-diepvries hidden">
-        <div class="diepvries inv">
-          <div class="inv-top">
-            <h2>Diepvries</h2>
-            <div class="close-diepvries">
-              <button class="close-diepvries close-button"></button>
-              <figure>
-                <img src="./Images/close.png" alt="" class="close-diepvries" />
-              </figure>
-            </div>
-          </div>
-          <div class="list-inv">
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
-          </div>
-          <!-- <div class="frigo-item"></div>
+        <div class="list-inv">
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+        </div>
+        <!-- <div class="frigo-item"></div>
           <div class="frigo-item"></div>
           <div class="frigo-item"></div>
           <div class="frigo-item"></div>
@@ -150,94 +146,104 @@
           <div class="frigo-item"></div>
           <div class="frigo-item"></div>
           <div class="frigo-item"></div> -->
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="main-keuken-zoom hidden">
-        <h2 class="hidden">keuken-zoom</h2>
-        <button class="keuken-zoom-img-kast button"></button>
-        <div class="dampkap">
-          <button class="button damp1"></button>
-          <button class="button damp2"></button>
-          <button class="button damp3"></button>
-        </div>
-        <button class="terug-zoom button">terug naar keuken</button>
-      </section>
+    <section class="main-keuken-zoom hidden">
+      <h2 class="hidden">keuken-zoom</h2>
+      <button class="keuken-zoom-img-kast button"></button>
+      <div class="dampkap">
+        <button class="button damp1"></button>
+        <button class="button damp2"></button>
+        <button class="button damp3"></button>
+      </div>
+      <button class="terug-zoom button">terug naar keuken</button>
+    </section>
 
-      <section class="main-kast hidden">
-        <div class="kast inv">
-          <div class="inv-top">
-            <h2>Kast</h2>
-            <div class="close-kast">
-              <button class="close-button close-kast"></button>
-              <figure>
-                <img
-                  src="./Images/close.png"
-                  alt="sluit icon"
-                  class="close-kast"
-                />
-              </figure>
-            </div>
-          </div>
-          <div class="list-inv">
-            <button class="inv-item">
-              <img src="./Images/pan_1.png" alt="pan" />
-            </button>
-            <button class="inv-item">
-              <img src="./Images/pan_2.png" alt="pan" />
-            </button>
-            <button class="inv-item">
-              <img src="./Images/vuile_pan_1.png" alt="vuile pan" />
-            </button>
-            <button class="inv-item">
-              <img src="./Images/snelkook_pan.png" alt="snelkook pan" />
-            </button>
-            <button class="inv-item">
-              <img src="./Images/tefal_pan.png" alt="tefal pan" />
-            </button>
-            <button class="inv-item">
-              <img src="./Images/kookpot_1.png" alt="kookpot" />
-            </button>
-            <button class="inv-item">
-              <img src="./Images/kookpot_2.png" alt="kookpot" />
-            </button>
-            <button class="inv-item">
-              <img src="./Images/kookpot_3.png" alt="kookpot" />
-            </button>
-            <button class="inv-item"></button>
-            <button class="inv-item"></button>
+    <section class="main-kast hidden">
+      <div class="kast inv">
+        <div class="inv-top">
+          <h2>Kast</h2>
+          <div class="close-kast">
+            <button class="close-button close-kast"></button>
+            <figure>
+              <img src="./Images/close.png" alt="sluit icon" class="close-kast" />
+            </figure>
           </div>
         </div>
-      </section>
+        <div class="list-inv">
+          <button class="inv-item">
+            <img src="./Images/pan_1.png" alt="pan" />
+          </button>
+          <button class="inv-item">
+            <img src="./Images/pan_2.png" alt="pan" />
+          </button>
+          <button class="inv-item">
+            <img src="./Images/vuile_pan_1.png" alt="vuile pan" />
+          </button>
+          <button class="inv-item">
+            <img src="./Images/snelkook_pan.png" alt="snelkook pan" />
+          </button>
+          <button class="inv-item">
+            <img src="./Images/tefal_pan.png" alt="tefal pan" />
+          </button>
+          <button class="inv-item">
+            <img src="./Images/kookpot_1.png" alt="kookpot" />
+          </button>
+          <button class="inv-item">
+            <img src="./Images/kookpot_2.png" alt="kookpot" />
+          </button>
+          <button class="inv-item">
+            <img src="./Images/kookpot_3.png" alt="kookpot" />
+          </button>
+          <button class="inv-item"></button>
+          <button class="inv-item"></button>
+        </div>
+      </div>
+    </section>
 
-      <section class="eindscherm hidden">
-        <div class="scoreboard">
-          <div>
-            <h2>- UW SCORE -</h2>
-            <p class="eindscherm-punten">placeholder</p>
-            <h3>punten</h3>
-            <p class="totaalPunten"></p>
-            <p class="minpunten"></p>
+    <section class="dialog-box hidden">
+      <div class="dialog">
+        <div>
+          <div class="text-dialog">
+            <h1 class="title"></h1>
+            <p class="text"></p>
           </div>
+          <button class="button_dialog">Volgende ></button>
+        </div>
+        <figure><img src="./Images/dialog-icon.png" alt="person" class="img_talking_person" /></figure>
+      </div>
+    </section>
+
+    <section class="eindscherm hidden">
+      <div class="scoreboard">
+        <div>
+          <h2>- UW SCORE -</h2>
+          <p class="eindscherm-punten">placeholder</p>
+          <h3>punten</h3>
+          <p class="totaalPunten"></p>
+          <p class="minpunten"></p>
+        </div>
+        <div class="leaderboard">
           <div class="leaderboard">
-            <div class="leaderboard">
-              <table id="leaderboardTable">
-                <tr>
-                  <th>Player Name</th>
-                  <th>Score</th>
-                  <th>Date Achieved</th>
-                </tr>
-              </table>
-            </div>
+            <table id="leaderboardTable">
+              <tr>
+                <th>Player Name</th>
+                <th>Score</th>
+                <th>Date Achieved</th>
+              </tr>
+            </table>
           </div>
         </div>
-        <div class="buttons-eindscherm">
-          <button class="refresh">Replay</button>
-          <button>Afrekenen</button>
-        </div>
-      </section>
-    </main>
+      </div>
+      <div class="buttons-eindscherm">
+        <button class="refresh">Replay</button>
+        <button>Afrekenen</button>
+      </div>
+    </section>
+  </main>
 
-    <footer></footer>
-  </body>
+  <footer></footer>
+</body>
+
 </html>
