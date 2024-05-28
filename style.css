@@ -17,7 +17,7 @@
     box-shadow:#fff45f 1rem 1rem ;
 } */
 
-.button {
+button {
     background-color: transparent;
     border: 2px solid black;
     /* border: none; */
@@ -27,6 +27,23 @@
 .button:hover {
     box-shadow: 0 0 100px 60px #fff45f;
 
+}
+
+.overlay-link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: auto;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+}
+
+.overlay-link:focus {
+    border: #fff45f 1px solid;
 }
 
 
@@ -171,6 +188,7 @@ body {
 
 .fig figure {
     width: 100%;
+    position: relative;
 }
 
 /* keuken */
@@ -266,6 +284,7 @@ body {
 .close-frigo {
     background-color: transparent;
     border: none;
+    position: relative;
 }
 
 .main-frigo {
@@ -341,12 +360,19 @@ body {
 .close-diepvries {
     background-color: transparent;
     border: none;
+    position: relative;
+}
+
+.close-button {
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .groenten {
     position: absolute;
     bottom: 5%;
-    right: 5%;
+    right: 0%;
     display: flex;
 }
 
@@ -397,6 +423,13 @@ body {
 .close-kast {
     background-color: transparent;
     border: none;
+    position: relative;
+}
+
+.close-button {
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 
@@ -454,6 +487,18 @@ body {
     transform: translateY(-50%);
 }
 
+.dampkap {
+    height: 2rem;
+    position: absolute;
+    left: 39vw;
+    top: 13vh;
+}
+
+.dampkap button {
+    height: 100%;
+    width: 2rem;
+    border-radius: 1rem;
+}
 
 
 
@@ -543,7 +588,7 @@ body {
 }
 
 
-@media screen and (min-width: 950px) and (min-height: 650px) {
+/* @media screen and (min-width: 950px) and (min-height: 650px) {
 
     .keuken-img-micro {
         left: 9%;
@@ -566,7 +611,7 @@ body {
         width: 20%;
     }
 
-}
+} */
 
 /* @media screen and (min-height: 650px) {
     .slaapkamer-deur {
@@ -575,7 +620,7 @@ body {
     }
 } */
 
-@media screen and (min-width: 1050px) and (min-height: 650px) {
+/* @media screen and (min-width: 1050px) and (min-height: 650px) {
     .inv {
         width: 50rem;
         height: 26rem;
@@ -595,10 +640,10 @@ body {
         border-radius: .6rem;
     }
 
-}
+} */
 
 
-@media screen and (min-width: 1350px) and (min-height: 650px) {
+/* @media screen and (min-width: 1350px) and (min-height: 650px) {
     .inv {
         width: 70rem;
         height: 30rem;
@@ -625,24 +670,84 @@ body {
         border-radius: .6rem;
     }
 
-}
+} */
 
 
-@media screen and (min-width: 1050px) and (min-height: 750px) {
+/* @media screen and (min-width: 1050px) and (min-height: 750px) {
     .slaapkamer-deur {
         height: 50%;
         width: 15%;
     }
-}
+} */
 
 
-@media screen and (min-width: 1400px) and (min-height: 850px) {
+/* @media screen and (min-width: 1400px) and (min-height: 850px) {
     .slaapkamer-deur {
         height: 50%;
         width: 15%;
     }
-}
+} */
 
+
+@media screen and (min-width: 1100px) {
+    .dampkap {
+        width: auto;
+        top: 22vh;
+        left: 40vw;
+        gap: 3rem;
+    }
+
+    .dampkap button {
+        margin-inline: .5rem;
+    }
+
+    .keuken-zoom-img-kast {
+        height: 39vh;
+    }
+
+    .keuken-img-micro {
+        left: 10vw;
+        height: 20vh;
+        top: 25vh;
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .keuken-img-micro h2 {
+        font-size: 1rem;
+    }
+
+    .keuken-img-frigo {
+        width: 20vw;
+    }
+
+    .keuken-img-diepvries {
+        width: 20vw;
+    }
+
+    .slaapkamer-deur {
+        width: 16vw;
+        height: 51vh;
+    }
+
+    .inv {
+        height: 70%;
+        width: 80%;
+    }
+
+    .inv-top {
+        font-size: 1.5rem;
+    }
+
+    .list-inv {
+        margin-inline: 2rem;
+    }
+
+    .inv-item {
+        width: 8rem;
+        height: 8rem;
+    }
+}
 
 .hidden {
     display: none;
