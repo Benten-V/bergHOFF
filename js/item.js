@@ -1,9 +1,9 @@
 "use strict";
 (function () {
   const frigo = document.querySelector(".keuken-img-frigo");
-  const frigoInv = document.querySelector(".frigo")
+  const frigoInv = document.querySelector(".frigo");
   const keuken = document.querySelector(".main-keuken");
-  const groentenplek = document.querySelector(".groenten")
+  const groentenplek = document.querySelector(".groenten");
   const frigovenster = document.querySelector(".main-frigo");
   const closeFrigo = document.querySelector(".close-frigo");
   const microgolf = document.querySelector(".keuken-img-micro");
@@ -78,20 +78,28 @@
 
       // werkt bijna enige probleem is da ge niet meerdere groenten kunt plaatsen
       // werkt blijkbaar niet
-      console.log(this.vleeslist[this.item1 - 1].getName());
-      console.log(this.groentenlist[this.item2 - 1].getName());
-      console.log(this.groentenlist[this.item3 - 1].getName());
-
       if (
-          item.getName() === this.vleeslist[this.item1 - 1].getName() ||
-          item.getName() === this.groentenlist[this.item2 - 1].getName() ||
-          item.getName() === this.groentenlist[this.item3 - 1].getName()
+        item.getName() === this.vleeslist[this.item1 - 1].getName() &&
+        this.itemcount1 == 0
       ) {
-        this.moveItem(item, itemElement, locatie);
-        console.log("replace");
+        this.moveItem(item, itemElement);
+        this.itemcount1 = 1;
+      } else if (
+        item.getName() === this.groentenlist[this.item2 - 1].getName() &&
+        this.itemcount2 == 0
+      ) {
+        this.moveItem(item, itemElement);
+        this.itemcount2 = 1;
+      } else if (
+        item.getName() === this.groentenlist[this.item3 - 1].getName() &&
+        this.itemcount3 == 0
+      ) {
+        this.moveItem(item, itemElement);
+        this.itemcount3 = 1;
       } else {
-        console.log("kan niet (ik ga dit nog beter maken)");
+        console.log("Foute groente || groenten op bureau geclickt");
       }
+      console.log("replace");
     }
     moveItem(item, itemElement, locatie) {
       sluitItem(frigovenster, keuken);
@@ -106,12 +114,15 @@
     item1;
     item2;
     item3;
+    itemcount1 = 0;
+    itemcount2 = 0;
+    itemcount3 = 0;
 
     constructor(items, groentenlist, vleeslist) {
       super(items);
       this.groentenlist = groentenlist;
       this.vleeslist = vleeslist;
-      super.inventoryUpdate(frigoInv, groentenplek)
+      super.inventoryUpdate(frigoInv, groentenplek);
       this.randomizer();
       this.update();
     }
@@ -144,7 +155,6 @@
       randomli2.textContent = this.groentenlist[this.item2 - 1].getName();
       randomli3.textContent = this.groentenlist[this.item3 - 1].getName();
     }
-
   }
   const steak = new vlees(
     "steak",
