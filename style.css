@@ -16,8 +16,12 @@
 /* button:focus-visible {
     box-shadow:#fff45f 1rem 1rem ;
 } */
-
 button {
+    background-color: transparent;
+    border: 0;
+}
+
+.button {
     background-color: transparent;
     border: 2px solid black;
     /* border: none; */
@@ -380,6 +384,18 @@ body {
     max-width: 6rem;
 }
 
+
+.messen {
+    border: 1px solid var(--black);
+    position: absolute;
+    bottom: 5%;
+    right: 0%;
+    display: flex;
+}
+
+.messen img {
+    max-width: 6rem;
+}
 
 /* Keuken zoom */
 
@@ -746,6 +762,15 @@ body {
     .inv-item {
         width: 8rem;
         height: 8rem;
+    }
+
+    .groenten {
+        right: 5vw;
+        bottom: 18vh;
+    }
+
+    .groenten img {
+        max-width: 8rem;
     }
 }
 

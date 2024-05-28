@@ -84,19 +84,19 @@
         item.getName() === this.vleeslist[this.item1 - 1].getName() &&
         this.itemcount1 == 0
       ) {
-        this.moveItem(item, itemElement, locatie , inventoryVenster);
+        this.moveItem(item, itemElement, locatie, inventoryVenster);
         this.itemcount1 = 1;
       } else if (
         item.getName() === this.groentenlist[this.item2 - 1].getName() &&
         this.itemcount2 == 0
       ) {
-        this.moveItem(item, itemElement, locatie , inventoryVenster);
+        this.moveItem(item, itemElement, locatie, inventoryVenster);
         this.itemcount2 = 1;
       } else if (
         item.getName() === this.groentenlist[this.item3 - 1].getName() &&
         this.itemcount3 == 0
       ) {
-        this.moveItem(item, itemElement, locatie , inventoryVenster);
+        this.moveItem(item, itemElement, locatie, inventoryVenster);
         this.itemcount3 = 1;
       } else {
         console.log("Foute groente || groenten op bureau geclickt");
@@ -105,7 +105,7 @@
     }
     moveItem(item, itemElement, locatie, inventoryVenster) {
       sluitItem(inventoryVenster, this.#startlocatie);
-      const itemSlot = document.createElement("div");
+      const itemSlot = document.createElement("button");
       locatie.appendChild(itemSlot);
       itemSlot.appendChild(itemElement);
     }
@@ -164,11 +164,11 @@
       super.checkitem(item, itemElement, locatie, inventoryVenster);
     }
   }
-  class Kast extends Inventory{
+  class Kast extends Inventory {
     constructor(items) {
       super(items);
       super.setStartLocatie(keukenzoom);
-      super.inventoryUpdate(kastkeuken, fornuis, kastkeuken)
+      super.inventoryUpdate(kastkeuken, fornuis, kastkeuken);
     }
     checkitem(item, itemElement, locatie, inventoryVenster) {
       super.moveItem(item, itemElement, locatie, inventoryVenster);
@@ -210,43 +210,28 @@
     "wortel",
     "./Images/carrot-illustration-with-leaf-png.webp"
   );
-  const pan1 = new Item(
-      "pan",
-      "./Images/pan_1.png"
-  );
-  const pan2 = new Item(
-      "pan",
-      "./Images/pan_2.png"
-  );
-  const pan3 = new Item(
-      "vuile pan",
-      "./Images/vuile_pan_1.png"
-  );
-  const pan4 = new Item(
-      "snelkook pan",
-      "./Images/snelkook_pan.png"
-  );
-  const pan5 = new Item(
-      "tefal pan",
-      "../Images/tefal_pan.png"
-  );
-  const kookpot1 = new Item(
-      "kookpot",
-      "./Images/kookpot_1.png"
-  );
+  const pan1 = new Item("pan", "./Images/pan_1.png");
+  const pan2 = new Item("pan", "./Images/pan_2.png");
+  const pan3 = new Item("vuile pan", "./Images/vuile_pan_1.png");
+  const pan4 = new Item("snelkook pan", "./Images/snelkook_pan.png");
+  const pan5 = new Item("tefal pan", "../Images/tefal_pan.png");
+  const kookpot1 = new Item("kookpot", "./Images/kookpot_1.png");
 
-  const kookpot2 = new Item(
-      "kookpot",
-      "./Images/kookpot_2.png"
-  );
+  const kookpot2 = new Item("kookpot", "./Images/kookpot_2.png");
 
-  const kookpot3 = new Item(
-      "kookpot",
-      "./Images/kookpot_2.png"
-  );
+  const kookpot3 = new Item("kookpot", "./Images/kookpot_2.png");
 
   let inventoryList1 = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
-  let inventoryList2 = [pan1,pan2,pan3,pan4,pan5,kookpot1,kookpot2,kookpot3];
+  let inventoryList2 = [
+    pan1,
+    pan2,
+    pan3,
+    pan4,
+    pan5,
+    kookpot1,
+    kookpot2,
+    kookpot3,
+  ];
   let vleeslist = [steak, kip, beacon];
   let groetenlist = [sla, tomaat, komkommer, wortel];
   const fridge = new Fridge(inventoryList1, groetenlist, vleeslist);
