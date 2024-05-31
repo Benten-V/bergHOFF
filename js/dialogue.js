@@ -1,5 +1,3 @@
-'use strict';
-
 (function () {
     // Selecteren van de div waar de html-elementen titel en tekst inzitten en opslaan in variabele
     const dialogBox = document.querySelector(".dialog-box");
@@ -15,14 +13,6 @@
     // Functie om de dialog-box te tonen
     const showDialog = function (event, dialog) {
         event.preventDefault(); // Voorkomt het standaardgedrag van de link
-        dialogBox.classList.remove("hidden");
-        dialog.invullen();
-    }
-
-    // Functie om de dialog-box te tonen en een element te verwijderen
-    const showAndRemoveDialog = function (event, dialog) {
-        event.preventDefault(); // Voorkomt het standaardgedrag van de link
-        event.currentTarget.closest("div").remove(); // Verwijdert het gehele div-element dat de aangeklikte link bevat
         dialogBox.classList.remove("hidden");
         dialog.invullen();
     }
@@ -55,23 +45,18 @@
         }
     }
 
-    // Aanmaken van een goede dialoog
+    // Aanmaken van de dialogen
     const goodDialog = new Dialog("Goed zo 👍", "Hier heb je de juiste keuze gemaakt ✅", "./Images/dialog-icon.png", "Good Character");
-
-    // Aanmaken van een slechte dialoog
+    const semiGoodDialog = new Dialog("Bijna goed 🤔", "Dit is een redelijke keuze, maar niet de beste 😐", "./Images/dialog-icon.png", "Semi-Good Character");
     const badDialog = new Dialog("Auwch 😓", "Je hebt hier niet de juiste keuze gemaakt ❌", "./Images/dialog-icon.png", "Bad Character");
 
-    // Selecteer alle elementen met de class good-dialogue en bad-dialogue
-    const goodDialogLinks = document.querySelectorAll(".good-dialogue");
-    const badDialogLinks = document.querySelectorAll(".bad-dialogue");
+    // Selecteer de dampknoppen
+    const damp1Button = document.querySelector(".damp1");
+    const damp2Button = document.querySelector(".damp2");
+    const damp3Button = document.querySelector(".damp3");
 
-    // Event listeners toevoegen aan alle good-dialogue links
-    goodDialogLinks.forEach(link => {
-        link.addEventListener("click", (event) => showDialog(event, goodDialog));
-    });
-
-    // Event listeners toevoegen aan alle bad-dialogue links
-    badDialogLinks.forEach(link => {
-        link.addEventListener("click", (event) => showAndRemoveDialog(event, badDialog));
-    });
+    // Event listeners toevoegen aan de dampknoppen
+    damp1Button.addEventListener("click", (event) => showDialog(event, goodDialog));
+    damp2Button.addEventListener("click", (event) => showDialog(event, semiGoodDialog));
+    damp3Button.addEventListener("click", (event) => showDialog(event, badDialog));
 })();
