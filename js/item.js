@@ -39,13 +39,13 @@
     }
   }
 
-  class groenten extends Item {
+  class Groenten extends Item {
     constructor(name, img) {
       super(name, img);
     }
   }
 
-  class vlees extends Item {
+  class Vlees extends Item {
     constructor(name, img) {
       super(name, img);
     }
@@ -65,12 +65,15 @@
         itemElement.src = item.getImg();
         itemElement.alt = item.getName();
         slots[i].appendChild(itemElement);
-        itemElement.addEventListener("click", () => {
+        const handleClick = () => {
           this.checkitem(item, itemElement, locatie, inventoryVenster);
-        });
+          itemElement.removeEventListener("click", handleClick);
+        }
+        itemElement.addEventListener("click", handleClick);
         i++;
       });
     }
+
     checkitem(item, itemElement, locatie, inventoryVenster) {
       //   console.log(item);
       //   console.log(itemElement);
@@ -174,39 +177,39 @@
       super.moveItem(item, itemElement, locatie, inventoryVenster);
     }
   }
-  const steak = new vlees(
+  const steak = new Vlees(
     "steak",
     "./Images/fresh-red-meat-file-free-png.webp"
   );
-  const kip = new vlees(
+  const kip = new Vlees(
     "kip",
     "./Images/kisspng-roast-chicken-food-roasting-clip-art-chicken-roast-5b48ff6f35ccd8.0481672615315106392204-removebg-preview.png"
   );
-  const beacon = new vlees(
-    "beacon",
+  const bacon = new Vlees(
+    "bacon",
     "./Images/pngtree-cartoon-pork-decorative-illustration-image_1454021-removebg-preview.png"
   );
-  //   const steak4 = new vlees(
+  //   const steak4 = new Vlees(
   //     "steak",
   //     "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
   //   );
 
-  const sla = new groenten(
+  const sla = new Groenten(
     "sla",
     "./Images/184341742-verse-groene-sla-geïsoleerd-op-wit-removebg-preview.png"
   );
 
-  const tomaat = new groenten(
+  const tomaat = new Groenten(
     "tomaat",
     "./Images/8424339-tomaat-geisoleerde-enkele-eenvoudige-cartoon-illustratie-vector-removebg-preview.png"
   );
 
-  const komkommer = new groenten(
+  const komkommer = new Groenten(
     "komkommer",
     "./Images/kisspng-pickled-cucumber-vegetable-melon-clip-art-cucumber-5abc06278bb8c3.2746227815222717835723-removebg-preview.png"
   );
 
-  const wortel = new groenten(
+  const wortel = new Groenten(
     "wortel",
     "./Images/carrot-illustration-with-leaf-png.webp"
   );
@@ -221,7 +224,7 @@
 
   const kookpot3 = new Item("kookpot", "./Images/kookpot_2.png");
 
-  let inventoryList1 = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
+  let inventoryList1 = [steak, kip, bacon, sla, tomaat, komkommer, wortel];
   let inventoryList2 = [
     pan1,
     pan2,
@@ -232,7 +235,7 @@
     kookpot2,
     kookpot3,
   ];
-  let vleeslist = [steak, kip, beacon];
+  let vleeslist = [steak, kip, bacon];
   let groetenlist = [sla, tomaat, komkommer, wortel];
   const fridge = new Fridge(inventoryList1, groetenlist, vleeslist);
   const closet = new Kast(inventoryList2);
