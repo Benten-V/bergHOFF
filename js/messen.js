@@ -1,21 +1,21 @@
-import * as items from './item';
+import {inventoryList1} from "./item";
+import {koksmes} from "./elementen";
 
-/*
-Eerst sla ik alle messen op in een variabele
- */
-
-
-const producten = [steak, kip, bacon, sla, tomaat, komkommer, wortel];
+const producten = inventoryList1;
+console.log(producten);
 const checkVoedselTafel = function (){
     const snijplankFigure = document.querySelector(".snijplankplek");
     const element = snijplankFigure.querySelectorAll('img')[1];
     const voedselOpPlank = element.alt;
-    return voedselOpPlank;
+    producten.forEach((product) => {
+        if (product.toString() === voedselOpPlank.toString()){
+            return product;
+        }
+    })
 }
 const snijd = function (mes) {
     checkVoedselTafel();
     console.log(checkVoedselTafel());
-
     return true;
 }
 
