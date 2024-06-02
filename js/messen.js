@@ -37,6 +37,7 @@ const magSnijden = function (mes) {
                 return false;
             }
         })
+        .catch(err => console.error(err));
 }
 
 koksmes.addEventListener('click', () => magSnijden(koksmes))
