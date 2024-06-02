@@ -1,4 +1,5 @@
-"use strict";
+import {koksmes} from "./messen";
+import {groentenmes} from "./messen";
 (function () {
   const frigo = document.querySelector(".keuken-img-frigo");
   const frigoInv = document.querySelector(".frigo");
@@ -20,16 +21,20 @@
   const kastkeuken = document.querySelector(".main-kast");
   const fornuis = document.querySelector(".fornuis");
   const closekast = document.querySelector(".close-kast");
+
   const sluitItem = function (verborgen, zichtbaar) {
     zichtbaar.classList.remove("hidden");
     verborgen.classList.add("hidden");
   };
+
   class Item {
     #name;
     #img;
-    constructor(name, img) {
+    #mes;
+    constructor(name, img, mes) {
       this.#name = name;
       this.#img = img;
+      this.#mes = mes;
     }
     getName() {
       return this.#name;
@@ -40,14 +45,14 @@
   }
 
   class groenten extends Item {
-    constructor(name, img) {
-      super(name, img);
+    constructor(name, img, mes) {
+      super(name, img, mes);
     }
   }
 
   class vlees extends Item {
-    constructor(name, img) {
-      super(name, img);
+    constructor(name, img, mes) {
+      super(name, img, mes);
     }
   }
   class Inventory {
@@ -174,41 +179,48 @@
       super.moveItem(item, itemElement, locatie, inventoryVenster);
     }
   }
-  const steak = new vlees(
+  export const steak = new vlees(
     "steak",
-    "./Images/fresh-red-meat-file-free-png.webp"
+    "./Images/fresh-red-meat-file-free-png.webp",
+      [koksmes]
   );
-  const kip = new vlees(
+  export const kip = new vlees(
     "kip",
-    "./Images/kisspng-roast-chicken-food-roasting-clip-art-chicken-roast-5b48ff6f35ccd8.0481672615315106392204-removebg-preview.png"
+    "./Images/kisspng-roast-chicken-food-roasting-clip-art-chicken-roast-5b48ff6f35ccd8.0481672615315106392204-removebg-preview.png",
+      [koksmes]
   );
-  const beacon = new vlees(
-    "beacon",
-    "./Images/pngtree-cartoon-pork-decorative-illustration-image_1454021-removebg-preview.png"
+  export const bacon = new vlees(
+    "bacon",
+    "./Images/pngtree-cartoon-pork-decorative-illustration-image_1454021-removebg-preview.png",
+      [koksmes]
   );
   //   const steak4 = new vlees(
   //     "steak",
   //     "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
   //   );
 
-  const sla = new groenten(
+  export const sla = new groenten(
     "sla",
-    "./Images/184341742-verse-groene-sla-geïsoleerd-op-wit-removebg-preview.png"
+    "./Images/184341742-verse-groene-sla-geïsoleerd-op-wit-removebg-preview.png",
+      [koksmes, groentenmes]
   );
 
-  const tomaat = new groenten(
+  export const tomaat = new groenten(
     "tomaat",
-    "./Images/8424339-tomaat-geisoleerde-enkele-eenvoudige-cartoon-illustratie-vector-removebg-preview.png"
+    "./Images/8424339-tomaat-geisoleerde-enkele-eenvoudige-cartoon-illustratie-vector-removebg-preview.png",
+      [koksmes, groentenmes]
   );
 
-  const komkommer = new groenten(
+  export const komkommer = new groenten(
     "komkommer",
-    "./Images/kisspng-pickled-cucumber-vegetable-melon-clip-art-cucumber-5abc06278bb8c3.2746227815222717835723-removebg-preview.png"
+    "./Images/kisspng-pickled-cucumber-vegetable-melon-clip-art-cucumber-5abc06278bb8c3.2746227815222717835723-removebg-preview.png",
+      [koksmes, groentenmes]
   );
 
-  const wortel = new groenten(
+  export const wortel = new groenten(
     "wortel",
-    "./Images/carrot-illustration-with-leaf-png.webp"
+    "./Images/carrot-illustration-with-leaf-png.webp",
+      [koksmes, groentenmes]
   );
   const pan1 = new Item("pan", "./Images/pan_1.png");
   const pan2 = new Item("pan", "./Images/pan_2.png");
@@ -221,7 +233,7 @@
 
   const kookpot3 = new Item("kookpot", "./Images/kookpot_2.png");
 
-  let inventoryList1 = [steak, kip, beacon, sla, tomaat, komkommer, wortel];
+  let inventoryList1 = [steak, kip, bacon, sla, tomaat, komkommer, wortel];
   let inventoryList2 = [
     pan1,
     pan2,
@@ -232,7 +244,7 @@
     kookpot2,
     kookpot3,
   ];
-  let vleeslist = [steak, kip, beacon];
+  let vleeslist = [steak, kip, bacon];
   let groetenlist = [sla, tomaat, komkommer, wortel];
   const fridge = new Fridge(inventoryList1, groetenlist, vleeslist);
   const closet = new Kast(inventoryList2);
