@@ -3,11 +3,7 @@ import * as items from './item';
 /*
 Eerst sla ik alle messen op in een variabele
  */
-export const koksmes = document.querySelector(".koksmes");
-const fileermes = document.querySelector(".fileermes");
-const broodmes = document.querySelector(".broodmes");
-const kaasmes = document.querySelector(".kaasmes");
-export const groentenmes = document.querySelector(".groentenmes");
+
 
 const producten = [steak, kip, bacon, sla, tomaat, komkommer, wortel];
 const checkVoedselTafel = function (){

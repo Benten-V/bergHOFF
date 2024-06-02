@@ -1,32 +1,20 @@
-import {koksmes} from "./messen";
-import {groentenmes} from "./messen";
-(function () {
-  const frigo = document.querySelector(".keuken-img-frigo");
-  const frigoInv = document.querySelector(".frigo");
-  const keuken = document.querySelector(".main-keuken");
-  const groentenplek = document.querySelector(".groenten");
-  const frigovenster = document.querySelector(".main-frigo");
-  const closeFrigo = document.querySelector(".close-frigo");
-  const microgolf = document.querySelector(".keuken-img-micro");
-  const diepvries = document.querySelector(".keuken-img-diepvries");
-  const diepvriesvenster = document.querySelector(".main-diepvries");
-  const closeDiepvries = document.querySelector(".close-diepvries");
-  const slaapkamerdeur = document.querySelector(".slaapkamer-deur");
-  const mainsection = document.querySelector(".main-section");
-  const slaapkamerterug = document.querySelector(".slaapkamer-terug");
-  const zoom = document.querySelector(".zoom");
-  const keukenzoom = document.querySelector(".main-keuken-zoom");
-  const terugkeuken = document.querySelector(".terug-zoom");
-  const kast = document.querySelector(".keuken-zoom-img-kast");
-  const kastkeuken = document.querySelector(".main-kast");
-  const fornuis = document.querySelector(".fornuis");
-  const closekast = document.querySelector(".close-kast");
+/*
+imports van de elementen
+ */
+import {koksmes} from "./elementen";
+import {groentenmes} from "./elementen";
 
+/*
+Reusable functions
+ */
   const sluitItem = function (verborgen, zichtbaar) {
     zichtbaar.classList.remove("hidden");
     verborgen.classList.add("hidden");
   };
 
+  /*
+  Classes
+   */
   class Item {
     #name;
     #img;
@@ -55,6 +43,7 @@ import {groentenmes} from "./messen";
       super(name, img, mes);
     }
   }
+
   class Inventory {
     #items = [];
     #startlocatie;
@@ -83,7 +72,7 @@ import {groentenmes} from "./messen";
       //   console.log(groetenlist[this.item2 - 1].getName());
       //   console.log(groetenlist[this.item3 - 1].getName());
 
-      // werkt bijna enige probleem is da ge niet meerdere groenten kunt plaatsen
+      // werkt bijna enige probleem is da je niet meerdere groenten kunt plaatsen
       // werkt blijkbaar niet
       if (
         item.getName() === this.vleeslist[this.item1 - 1].getName() &&
@@ -118,6 +107,7 @@ import {groentenmes} from "./messen";
       this.#startlocatie = startlocatie;
     }
   }
+
   class Fridge extends Inventory {
     vleeslist = [];
     groentenlist = [];
@@ -169,6 +159,7 @@ import {groentenmes} from "./messen";
       super.checkitem(item, itemElement, locatie, inventoryVenster);
     }
   }
+
   class Kast extends Inventory {
     constructor(items) {
       super(items);
@@ -179,58 +170,62 @@ import {groentenmes} from "./messen";
       super.moveItem(item, itemElement, locatie, inventoryVenster);
     }
   }
-  export const steak = new vlees(
+
+  /*
+  Creating the food
+   */
+  const steak = new vlees(
     "steak",
     "./Images/fresh-red-meat-file-free-png.webp",
       [koksmes]
   );
-  export const kip = new vlees(
+  const kip = new vlees(
     "kip",
     "./Images/kisspng-roast-chicken-food-roasting-clip-art-chicken-roast-5b48ff6f35ccd8.0481672615315106392204-removebg-preview.png",
       [koksmes]
   );
-  export const bacon = new vlees(
+  const bacon = new vlees(
     "bacon",
     "./Images/pngtree-cartoon-pork-decorative-illustration-image_1454021-removebg-preview.png",
       [koksmes]
   );
+
   //   const steak4 = new vlees(
   //     "steak",
   //     "./Images/plastic-water-bottle-empty-e170N24-600-removebg-preview.png"
   //   );
 
-  export const sla = new groenten(
+  const sla = new groenten(
     "sla",
     "./Images/184341742-verse-groene-sla-geïsoleerd-op-wit-removebg-preview.png",
       [koksmes, groentenmes]
   );
 
-  export const tomaat = new groenten(
+  const tomaat = new groenten(
     "tomaat",
     "./Images/8424339-tomaat-geisoleerde-enkele-eenvoudige-cartoon-illustratie-vector-removebg-preview.png",
       [koksmes, groentenmes]
   );
 
-  export const komkommer = new groenten(
+  const komkommer = new groenten(
     "komkommer",
     "./Images/kisspng-pickled-cucumber-vegetable-melon-clip-art-cucumber-5abc06278bb8c3.2746227815222717835723-removebg-preview.png",
       [koksmes, groentenmes]
   );
 
-  export const wortel = new groenten(
+  const wortel = new groenten(
     "wortel",
     "./Images/carrot-illustration-with-leaf-png.webp",
       [koksmes, groentenmes]
   );
+
   const pan1 = new Item("pan", "./Images/pan_1.png");
   const pan2 = new Item("pan", "./Images/pan_2.png");
   const pan3 = new Item("vuile pan", "./Images/vuile_pan_1.png");
   const pan4 = new Item("snelkook pan", "./Images/snelkook_pan.png");
   const pan5 = new Item("tefal pan", "../Images/tefal_pan.png");
   const kookpot1 = new Item("kookpot", "./Images/kookpot_1.png");
-
   const kookpot2 = new Item("kookpot", "./Images/kookpot_2.png");
-
   const kookpot3 = new Item("kookpot", "./Images/kookpot_2.png");
 
   let inventoryList1 = [steak, kip, bacon, sla, tomaat, komkommer, wortel];
@@ -300,4 +295,10 @@ import {groentenmes} from "./messen";
   //   );
   //   itemRandomizer.randomizer();
   //   const itemscijfers = itemRandomizer.update();
-})();
+
+/*
+Exports
+ */
+export {steak, kip, bacon, sla, tomaat, komkommer, wortel} from "item";
+export {pan1, pan2, pan3, pan4, pan5, kookpot1, kookpot2, kookpot3} from "item";
+export {vleeslist, groetenlist} from "item";
