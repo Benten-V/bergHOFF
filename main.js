@@ -17,14 +17,17 @@ const terugkeuken = document.querySelector(".terug-zoom");
 const kast = document.querySelector(".keuken-zoom-img-kast");
 const kastkeuken = document.querySelector(".main-kast");
 const closekast = document.querySelector(".close-kast");
+
 const openItem = function (verborgen, zichtbaar) {
   verborgen.classList.add("hidden");
   zichtbaar.classList.remove("hidden");
 };
+
 const sluitItem = function (verborgen, zichtbaar) {
   zichtbaar.classList.remove("hidden");
   verborgen.classList.add("hidden");
 };
+
 frigo.addEventListener("click", () => openItem(keuken, frigovenster));
 closeFrigo.addEventListener("click", () => sluitItem(frigovenster, keuken));
 diepvries.addEventListener("click", () => openItem(keuken, diepvriesvenster));
