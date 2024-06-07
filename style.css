@@ -202,7 +202,7 @@ body {
 
 .main-keuken {
     min-height: 100vh;
-    background-image: url(./Images/Keuken-img-glow.png);
+    background-image: url(./Images/keuken-img.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
@@ -240,13 +240,13 @@ body {
     list-style: none;
 }
 
-.keuken-img-diepvries {
+/*.keuken-img-diepvries {
     position: absolute;
     height: 25%;
     width: 20%;
     right: 0;
     top: 45%;
-}
+}*/
 
 .table-items {
     height: 7rem;
@@ -296,7 +296,7 @@ body {
 
 .main-frigo {
     min-height: 100vh;
-    background-image: url(./Images/Keuken-img-glow.png);
+    background-image: url(./Images/keuken-img);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
@@ -356,7 +356,7 @@ body {
 
 .main-diepvries {
     min-height: 100vh;
-    background-image: url(./Images/Keuken-img-glow.png);
+    background-image: url(./Images/keuken-img);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
@@ -403,7 +403,7 @@ body {
 
 .main-keuken-zoom {
     min-height: 100vh;
-    background-image: url(./Images/keuken-zoom-kast-top.png);
+    background-image: url(./Images/keuken-zoom-kast.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
@@ -608,10 +608,10 @@ body {
         width: 12%;
     }
 
-    .keuken-img-diepvries {
+    /*.keuken-img-diepvries {
         height: 20%;
         width: 20%;
-    }
+    }*/
 
     .keuken-zoom-img-kast {
         height: 25%;
@@ -631,10 +631,10 @@ body {
         width: 15%;
     }
 
-    .keuken-img-diepvries {
+    /*.keuken-img-diepvries {
         height: 20%;
         width: 15%;
-    }
+    }*/
 
     .keuken-img-frigo {
         width: 15%;
@@ -781,9 +781,9 @@ body {
         width: 20vw;
     }
 
-    .keuken-img-diepvries {
+    /*.keuken-img-diepvries {
         width: 20vw;
-    }
+    }*/
 
     .slaapkamer-deur {
         width: 16vw;
