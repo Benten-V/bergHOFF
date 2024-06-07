@@ -28,31 +28,55 @@ const broodmes = document.querySelector(".broodmes");
 const kaasmes = document.querySelector(".kaasmes");
 const groentenmes = document.querySelector(".groentenmes");
 
+const openItem = function (verborgen, zichtbaar) {
+    console.log('openItem called');
+    verborgen.classList.add("hidden");
+    zichtbaar.classList.remove("hidden");
+};
+const sluitItem = function (verborgen, zichtbaar) {
+    console.log('sluitItem called');
+    zichtbaar.classList.remove("hidden");
+    verborgen.classList.add("hidden");
+};
+document.addEventListener("DOMContentLoaded", function () {
+    frigo.addEventListener("click", () => openItem(keuken, frigovenster));
+    closeFrigo.addEventListener("click", () => sluitItem(frigovenster, keuken));
+    diepvries.addEventListener("click", () => openItem(keuken, diepvriesvenster));
+    closeDiepvries.addEventListener("click", () => sluitItem(diepvriesvenster, keuken));
+    slaapkamerdeur.addEventListener("click", () => openItem(mainsection, keuken));
+    slaapkamerterug.addEventListener("click", () => openItem(keuken, mainsection));
+    zoom.addEventListener("click", () => openItem(keuken, keukenzoom));
+    terugkeuken.addEventListener("click", () => openItem(keukenzoom, keuken));
+    kast.addEventListener("click", () => openItem(keukenzoom, kastkeuken));
+    closekast.addEventListener("click", () => openItem(kastkeuken, keukenzoom));
+});
 /*
 Exports van de elementen
  */
-export {frigo} from "elementen";
-export {frigoInv} from "elementen";
-export {keuken} from "elementen";
-export {groentenplek} from "elementen";
-export {frigovenster} from "elementen";
-export {closeFrigo} from "elementen";
-export {microgolf} from "elementen";
-export {diepvries} from "elementen";
-export {diepvriesvenster} from "elementen";
-export {closeDiepvries} from "elementen";
-export {slaapkamerdeur} from "elementen";
-export {mainsection} from "elementen";
-export {slaapkamerterug} from "elementen";
-export {zoom} from "elementen";
-export {keukenzoom} from "elementen";
-export {terugkeuken} from "elementen";
-export {kast} from "elementen";
-export {kastkeuken} from "elementen";
-export {fornuis} from "elementen";
-export {closekast} from "elementen";
-export {koksmes} from "elementen";
-export {fileermes} from "elementen";
-export {broodmes} from "elementen";
-export {kaasmes} from "elementen";
-export {groentenmes} from "elementen";
+export {
+  frigo,
+  frigoInv,
+  keuken,
+  groentenplek,
+  frigovenster,
+  closeFrigo,
+  microgolf,
+  diepvries,
+  diepvriesvenster,
+  closeDiepvries,
+  slaapkamerdeur,
+  mainsection,
+  slaapkamerterug,
+  zoom,
+  keukenzoom,
+  terugkeuken,
+  kast,
+  kastkeuken,
+  fornuis,
+  closekast,
+  koksmes,
+  fileermes,
+  broodmes,
+  kaasmes,
+  groentenmes
+ };
