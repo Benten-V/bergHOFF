@@ -55,5 +55,3 @@ class Vuur{
 }
 const test = new Vuur(vuur1, clockLocatie);
 const test2 = new Vuur(vuur2, clockLocatie2);
-
-test4.fillCircleOverTime(10);
