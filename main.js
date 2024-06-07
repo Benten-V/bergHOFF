@@ -17,7 +17,6 @@ const sluitItem = function (verborgen, zichtbaar) {
   zichtbaar.classList.remove("hidden");
   verborgen.classList.add("hidden");
 };
-
 frigo.addEventListener("click", () => openItem(keuken, frigovenster));
 closeFrigo.addEventListener("click", () => sluitItem(frigovenster, keuken));
 diepvries.addEventListener("click", () => openItem(keuken, diepvriesvenster));
