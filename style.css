@@ -296,7 +296,7 @@ body {
 
 .main-frigo {
     min-height: 100vh;
-    background-image: url(./Images/keuken-img);
+    background-image: url(./Images/keuken-img.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
@@ -356,7 +356,7 @@ body {
 
 .main-diepvries {
     min-height: 100vh;
-    background-image: url(./Images/keuken-img);
+    background-image: url(./Images/keuken-img.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
@@ -483,7 +483,7 @@ body {
 
 .main-kast {
     min-height: 100vh;
-    background-image: url(./Images/keuken-zoom-kast-top.png);
+    background-image: url(./Images/keuken-zoom-kast.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 10%;
