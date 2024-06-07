@@ -428,6 +428,7 @@ body {
     bottom: 25%;
     right: 47%;
     display: flex;
+    flex-direction: row-reverse;
 }
 .fornuis img{
     max-width: 4rem;
