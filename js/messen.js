@@ -115,3 +115,4 @@ groentenmes.addEventListener('click', () => {
     }
 })
 /*eventListeners moeten toegevoegd worden wanneer de elementen op de groentenplek worden gezet*/
+export {zetVoedingOpPlank};
