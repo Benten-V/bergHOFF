@@ -5,11 +5,12 @@ const producten = inventoryList1;
 
 /*Met deze functie kan een product naar een item van item.js omgezet worden*/
 const zetProductNaarItem = function (product) {
-    producten.forEach((item) => {
-        if (item.toString() === product) {
-            return item;
-        }
-    })
+    const gevondenItem = producten.find((item) => {
+        return item.getName() === product;
+    });
+    if (gevondenItem) {
+        return gevondenItem;
+    }
 }
 /*
 In de functie checkVoedselTafel wordt gekeken welk voedsel op de plank ligt.
@@ -19,66 +20,62 @@ const checkVoedselTafel = function () {
     const snijplankFigure = document.querySelector(".snijplankplek");
     const element = snijplankFigure.querySelectorAll('img')[1];
     const voedselOpPlank = element.alt;
-    producten.forEach((product) => {
-        if (product.toString() === voedselOpPlank.toString()) {
-            return product;
-        }
-    })
+    return voedselOpPlank;
 }
 /*In deze functie wordt voor elk mes een lijst gemaakt van voedsel dat met het mes gesneden mag worden.*/
 const checkVoedingVanMes = function (mes) {
+    const checkmes = mes.alt.toString();
     let aanvaardeVoeding = []
-    switch (mes.toString()) {
+    switch (checkmes) {
         case 'koksmes':
-            aanvaardeVoeding = +vleeslist;
-            aanvaardeVoeding = +groentenlist;
+            return producten;
             break;
         case 'groentenmes':
-            aanvaardeVoeding = +groentenlist;
+            return groentenlist;
             break;
         default:
             break;
     }
-    return aanvaardeVoeding;
 }
 /*Hier wordt gecontroleerd of het mes het voedsel mag snijden*/
 const magSnijden = function (mes) {
-    const voeding = checkVoedselTafel();
+    const voeding = checkVoedselTafel(); //dit is een string, naam van product
     const voedinglijst = checkVoedingVanMes(mes);
-    voedinglijst.forEach(voedsel => {
-        if (voedsel === voeding) {
-            return true;
-        }
-    })
-    return false;
+    const gevondenItem = voedinglijst.find((voedsel) => {
+        return voedsel.getName() === voeding;
+    });
+    if (gevondenItem) {
+        return gevondenItem;
+    }
+
 }
 /*Hier wordt de afbeelding van het element veranderd.*/
 const zetGesnedenImg = function (voedsel) {
     let imglink = '../Images/';
-    switch (voedsel.toString()) {
+    switch (voedsel) {
         case 'tomaat':
-            imglink = +'gesneden_tomaat.png';
+            imglink ='./Images/gesneden_tomaat.png';
             break;
         case 'sla':
-            imglink = +'gesneden_sla.png';
+            imglink ='./Images/gesneden_sla.png';
             break;
         case 'wortel':
-            imglink = +'gesneden_wortel.png';
+            imglink ='./Images/gesneden_wortel.png';
             break;
         case 'komkommer':
-            imglink = +'gesneden_komkommer.png';
+            imglink ='./Images/gesneden_komkommer.png';
             break;
         case 'steak':
-            imglink = +'gesneden_steak.png';
+            imglink ='./Images/gesneden_steak.png';
             break;
         case 'kip':
-            imglink = +'gesneden_kip.png';
+            imglink ='./Images/gesneden_kip.png';
             break;
         case 'bacon':
-            imglink = +'gesneden_bacon.png';
+            imglink ='./Images/gesneden_bacon.png';
             break;
         default:
-            imglink = +'close.png';
+            imglink ='./Images/close.png';
             break;
     }
     return imglink;
@@ -86,24 +83,22 @@ const zetGesnedenImg = function (voedsel) {
 /*In deze functie wordt het voedsel gesneden*/
 const snijd = function () {
     const voeding = checkVoedselTafel();
-    zetGesnedenImg(voeding);
-}
-/*Door het klikken op een ingrediënt wordt deze op de snijplank gezet*/
-const zetVoedingOpPlank = function (voeding, voedingItem) {
-    /*element toevoegen snijplank*/
+    const item = zetProductNaarItem(voeding);
+    const imgsrc = zetGesnedenImg(voeding);
+    item.setImg(imgsrc);
     const snijplankFigure = document.querySelector(".snijplankplek");
-    const element = document.createElement('img');
-    element.src = voedingItem['img'];
-    element.alt = voedingItem['name'];
-    snijplankFigure.appendChild(element);
-   /*element verwijderen groentenplek*/
-    voeding.remove();
+    const element = snijplankFigure.querySelectorAll('img')[1];
+    element.src = imgsrc;
+    console.log(item)
 }
 
+
 koksmes.addEventListener('click', () => {
+    console.log(magSnijden(koksmes));
     if (magSnijden(koksmes)) {
         snijd();
     } else {
+        console.log('tis ni just');
         //hier moet boodschap verschijnen dat dat niet mag
     }
 })
@@ -111,6 +106,7 @@ groentenmes.addEventListener('click', () => {
     if (magSnijden(groentenmes)) {
         snijd();
     } else {
+        console.log('ge zijt ni just bezig')
         //hier moet boodschap verschijnen dat dat niet mag
     }
 })

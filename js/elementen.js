@@ -4,10 +4,6 @@ const keuken = document.querySelector(".main-keuken");
 const groentenplek = document.querySelector(".groenten");
 const frigovenster = document.querySelector(".main-frigo");
 const closeFrigo = document.querySelector(".close-frigo");
-const microgolf = document.querySelector(".keuken-img-micro");
-const diepvries = document.querySelector(".keuken-img-diepvries");
-const diepvriesvenster = document.querySelector(".main-diepvries");
-const closeDiepvries = document.querySelector(".close-diepvries");
 const slaapkamerdeur = document.querySelector(".slaapkamer-deur");
 const mainsection = document.querySelector(".main-section");
 const slaapkamerterug = document.querySelector(".slaapkamer-terug");
@@ -41,8 +37,6 @@ const sluitItem = function (verborgen, zichtbaar) {
 document.addEventListener("DOMContentLoaded", function () {
     frigo.addEventListener("click", () => openItem(keuken, frigovenster));
     closeFrigo.addEventListener("click", () => sluitItem(frigovenster, keuken));
-    diepvries.addEventListener("click", () => openItem(keuken, diepvriesvenster));
-    closeDiepvries.addEventListener("click", () => sluitItem(diepvriesvenster, keuken));
     slaapkamerdeur.addEventListener("click", () => openItem(mainsection, keuken));
     slaapkamerterug.addEventListener("click", () => openItem(keuken, mainsection));
     zoom.addEventListener("click", () => openItem(keuken, keukenzoom));
@@ -60,10 +54,6 @@ export {
     groentenplek,
     frigovenster,
     closeFrigo,
-    microgolf,
-    diepvries,
-    diepvriesvenster,
-    closeDiepvries,
     slaapkamerdeur,
     mainsection,
     slaapkamerterug,

@@ -18,6 +18,7 @@ import {
 } from "./elementen.js";
 import {Dialog,showDialog, badDialog} from "./dialogue.js";
 import {openItem, sluitItem} from "./elementen.js";
+import {zetVoedingOpPlank} from "./voeding.js";
 
 const microgolf = document.querySelector(".keuken-img-micro");
 const diepvries = document.querySelector(".keuken-img-diepvries");
@@ -39,6 +40,9 @@ class Item {
 
     getImg() {
         return this.#img;
+    }
+    setImg(imgsrc) {
+        this.#img = imgsrc;
     }
 }
 
@@ -112,6 +116,9 @@ class Inventory {
             showDialog(null, badDialog);
         }
         console.log("replace");
+        itemElement.addEventListener('click', ()=> {
+            zetVoedingOpPlank(itemElement);
+        })
     }
 
     moveItem(item, itemElement, locatie, inventoryVenster) {
