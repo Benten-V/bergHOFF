@@ -753,74 +753,6 @@ body {
 } */
 
 
-@media screen and (min-width: 1100px) {
-    .dampkap {
-        width: auto;
-        top: 22vh;
-        left: 40vw;
-        gap: 3rem;
-    }
-
-    .dampkap button {
-        margin-inline: .5rem;
-    }
-
-    .keuken-zoom-img-kast {
-        height: 39vh;
-    }
-
-    .keuken-img-micro {
-        left: 10vw;
-        height: 20vh;
-        top: 25vh;
-        padding: 1rem;
-        font-size: 1.2rem;
-    }
-
-    .keuken-img-micro h2 {
-        font-size: 1rem;
-    }
-
-    .keuken-img-frigo {
-        width: 20vw;
-    }
-
-    /*.keuken-img-diepvries {
-        width: 20vw;
-    }*/
-
-    .slaapkamer-deur {
-        width: 16vw;
-        height: 51vh;
-    }
-
-    .inv {
-        height: 70%;
-        width: 80%;
-    }
-
-    .inv-top {
-        font-size: 1.5rem;
-    }
-
-    .list-inv {
-        margin-inline: 2rem;
-    }
-
-    .inv-item {
-        width: 8rem;
-        height: 8rem;
-    }
-
-    .groenten {
-        right: 5vw;
-        bottom: 18vh;
-    }
-
-    .groenten img {
-        max-width: 8rem;
-    }
-}
 
 .hidden {
     display: none;
@@ -924,4 +856,96 @@ th {
 
 .button_dialog {
     border: 2px solid #000000;
+}
+
+@media screen and (min-width: 1000px) {
+    .dampkap {
+        width: auto;
+        top: 20vh;
+        left: 40vw;
+        gap: 3rem;
+    }
+
+    .dampkap button {
+        margin-inline: 0.35rem;
+    }
+
+    .keuken-zoom-img-kast {
+        height: 39vh;
+    }
+
+    .keuken-img-micro {
+        left: 10vw;
+        height: 20vh;
+        top: 25vh;
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .keuken-img-micro h2 {
+        font-size: 1rem;
+    }
+
+    .keuken-img-frigo {
+        width: 20vw;
+    }
+
+    /*.keuken-img-diepvries {
+        width: 20vw;
+    }*/
+
+    .slaapkamer-deur {
+        width: 16vw;
+        height: 51vh;
+    }
+
+    .inv {
+        height: 70%;
+        width: 80%;
+    }
+
+    .inv-top {
+        font-size: 1.5rem;
+    }
+
+    .list-inv {
+        margin-inline: 2rem;
+    }
+
+    .inv-item {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .groenten {
+        right: 5vw;
+        bottom: 18vh;
+    }
+
+    .groenten img {
+        max-width: 8rem;
+    }
+    .fornuis {
+        bottom: 25vh;
+        right: 48vw;
+    }
+    .fornuis_vuur {
+        bottom: 14vh;
+        right: 45vw;
+    }
+    .fornuis img {
+        max-width: 6rem;
+    }
+    .clocks {
+        bottom: 40vh;
+        right: 48vw;
+    }
+    .clocks canvas{
+        margin: 0 1rem;
+    }
+    .dialog figure, .dialog figure img {
+        top: -180%;
+        right: 3%;
+    }
+
 }
