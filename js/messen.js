@@ -114,4 +114,4 @@ groentenmes.addEventListener('click', () => {
         //hier moet boodschap verschijnen dat dat niet mag
     }
 })
-//eventListeners moeten toegevoegd worden wanneer de elementen op de groentenplek worden gezet
+/*eventListeners moeten toegevoegd worden wanneer de elementen op de groentenplek worden gezet*/
