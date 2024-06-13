@@ -1,38 +1,41 @@
+import {
+    frigo,
+    frigoInv,
+    keuken,
+    groentenplek,
+    frigovenster,
+    closeFrigo,
+    slaapkamerdeur,
+    mainsection,
+    slaapkamerterug,
+    zoom,
+    keukenzoom,
+    terugkeuken,
+    kast,
+    kastkeuken,
+    fornuis,
+    closekast
+} from "./elementen.js";
+import {openItem, sluitItem} from "./elementen.js";
 
-const frigo = document.querySelector(".keuken-img-frigo");
-const frigoInv = document.querySelector(".frigo");
-const keuken = document.querySelector(".main-keuken");
-const groentenplek = document.querySelector(".groenten");
-const frigovenster = document.querySelector(".main-frigo");
-const closeFrigo = document.querySelector(".close-frigo");
 const microgolf = document.querySelector(".keuken-img-micro");
 const diepvries = document.querySelector(".keuken-img-diepvries");
 const diepvriesvenster = document.querySelector(".main-diepvries");
 const closeDiepvries = document.querySelector(".close-diepvries");
-const slaapkamerdeur = document.querySelector(".slaapkamer-deur");
-const mainsection = document.querySelector(".main-section");
-const slaapkamerterug = document.querySelector(".slaapkamer-terug");
-const zoom = document.querySelector(".zoom");
-const keukenzoom = document.querySelector(".main-keuken-zoom");
-const terugkeuken = document.querySelector(".terug-zoom");
-const kast = document.querySelector(".keuken-zoom-img-kast");
-const kastkeuken = document.querySelector(".main-kast");
-const fornuis = document.querySelector(".fornuis");
-const closekast = document.querySelector(".close-kast");
-const sluitItem = function (verborgen, zichtbaar) {
-    zichtbaar.classList.remove("hidden");
-    verborgen.classList.add("hidden");
-};
+
 class Item {
     #name;
     #img;
+
     constructor(name, img) {
         this.#name = name;
         this.#img = img;
     }
+
     getName() {
         return this.#name;
     }
+
     getImg() {
         return this.#img;
     }
@@ -49,12 +52,15 @@ class Vlees extends Item {
         super(name, img);
     }
 }
+
 class Inventory {
     #items = [];
     #startlocatie;
+
     constructor(items) {
         this.#items = items;
     }
+
     inventoryUpdate(inventory, locatie, inventoryVenster) {
         const slotsList = inventory.querySelector(".list-inv");
         const slots = slotsList.querySelectorAll(".inv-item");
@@ -105,16 +111,19 @@ class Inventory {
         }
         console.log("replace");
     }
+
     moveItem(item, itemElement, locatie, inventoryVenster) {
         sluitItem(inventoryVenster, this.#startlocatie);
         const itemSlot = document.createElement("button");
         locatie.appendChild(itemSlot);
         itemSlot.appendChild(itemElement);
     }
+
     setStartLocatie(startlocatie) {
         this.#startlocatie = startlocatie;
     }
 }
+
 class Fridge extends Inventory {
     vleeslist = [];
     groentenlist = [];
@@ -134,6 +143,7 @@ class Fridge extends Inventory {
         this.randomizer();
         this.update();
     }
+
     //het probleem nu is dat this.#item[i] is undefined aangezien het in een loop zit maar ik moet deze waarde hebben
     // maar ik heb geen idee hoe ik deze kan onthouden.
 
@@ -162,20 +172,24 @@ class Fridge extends Inventory {
         randomli2.textContent = this.groentenlist[this.item2 - 1].getName();
         randomli3.textContent = this.groentenlist[this.item3 - 1].getName();
     }
+
     checkitem(item, itemElement, locatie, inventoryVenster) {
         super.checkitem(item, itemElement, locatie, inventoryVenster);
     }
 }
+
 class Kast extends Inventory {
     constructor(items) {
         super(items);
         super.setStartLocatie(keukenzoom);
         super.inventoryUpdate(kastkeuken, fornuis, kastkeuken);
     }
+
     checkitem(item, itemElement, locatie, inventoryVenster) {
         super.moveItem(item, itemElement, locatie, inventoryVenster);
     }
 }
+
 const steak = new Vlees(
     "steak",
     "./Images/steak.png"
@@ -208,28 +222,43 @@ const wortel = new Groenten(
     "wortel",
     "./Images/wortel.png"
 );
-const pan1 = new Item("pan", "./Images/pan_1.png");
-const pan2 = new Item("pan", "./Images/pan_2.png");
-const pan3 = new Item("vuile pan", "./Images/vuile_pan_1.png");
-const pan4 = new Item("snelkook pan", "./Images/snelkook_pan.png");
-const pan5 = new Item("tefal pan", "../Images/tefal_pan.png");
-const kookpot1 = new Item("kookpot", "./Images/kookpot_1.png");
+const pan1 = new Item(
+    "pan",
+    "./Images/pan_1.png"
+);
+const pan2 = new Item(
+    "pan",
+    "./Images/pan_2.png"
+);
+const pan3 = new Item(
+    "vuile pan",
+    "./Images/vuile_pan_1.png"
+);
+const pan4 = new Item(
+    "snelkook pan",
+    "./Images/snelkook_pan.png"
+);
+const pan5 = new Item(
+    "tefal pan",
+    "../Images/tefal_pan.png"
+);
+const kookpot1 = new Item(
+    "kookpot",
+    "./Images/kookpot_1.png"
+);
 
-const kookpot2 = new Item("kookpot", "./Images/kookpot_2.png");
+const kookpot2 = new Item(
+    "kookpot",
+    "./Images/kookpot_2.png"
+);
 
-const kookpot3 = new Item("kookpot", "./Images/kookpot_2.png");
+const kookpot3 = new Item(
+    "kookpot",
+    "./Images/kookpot_2.png"
+);
 
 let inventoryList1 = [steak, kip, bacon, sla, tomaat, komkommer, wortel];
-let inventoryList2 = [
-    pan1,
-    pan2,
-    pan3,
-    pan4,
-    pan5,
-    kookpot1,
-    kookpot2,
-    kookpot3,
-];
+let inventoryList2 = [pan1, pan2, pan3, pan4, pan5, kookpot1, kookpot2, kookpot3];
 let vleeslist = [steak, kip, bacon];
 let groentenlist = [sla, tomaat, komkommer, wortel];
 const fridge = new Fridge(inventoryList1, groentenlist, vleeslist);

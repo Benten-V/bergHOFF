@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetchLeaderboard();
+  // fetchLeaderboard();
 });
 
 async function fetchLeaderboard() {
