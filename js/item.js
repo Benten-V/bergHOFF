@@ -40,6 +40,9 @@ class Item {
     getImg() {
         return this.#img;
     }
+    setImg(imgsrc) {
+        this.#img = imgsrc;
+    }
 }
 
 class Groenten extends Item {
