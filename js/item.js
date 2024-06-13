@@ -17,6 +17,7 @@ import {
     closekast
 } from "./elementen.js";
 import {openItem, sluitItem} from "./elementen.js";
+import {zetVoedingOpPlank} from "./voeding.js";
 
 const microgolf = document.querySelector(".keuken-img-micro");
 const diepvries = document.querySelector(".keuken-img-diepvries");
@@ -110,6 +111,10 @@ class Inventory {
             console.log("Foute groente || groenten op bureau geclickt");
         }
         console.log("replace");
+        itemElement.addEventListener('click', ()=> {
+            console.log(itemElement, item)
+            zetVoedingOpPlank(itemElement, item);
+        })
     }
 
     moveItem(item, itemElement, locatie, inventoryVenster) {

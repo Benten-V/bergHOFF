@@ -88,17 +88,7 @@ const snijd = function () {
     const voeding = checkVoedselTafel();
     zetGesnedenImg(voeding);
 }
-/*Door het klikken op een ingrediënt wordt deze op de snijplank gezet*/
-const zetVoedingOpPlank = function (voeding, voedingItem) {
-    /*element toevoegen snijplank*/
-    const snijplankFigure = document.querySelector(".snijplankplek");
-    const element = document.createElement('img');
-    element.src = voedingItem['img'];
-    element.alt = voedingItem['name'];
-    snijplankFigure.appendChild(element);
-   /*element verwijderen groentenplek*/
-    voeding.remove();
-}
+
 
 koksmes.addEventListener('click', () => {
     if (magSnijden(koksmes)) {
@@ -115,4 +105,3 @@ groentenmes.addEventListener('click', () => {
     }
 })
 /*eventListeners moeten toegevoegd worden wanneer de elementen op de groentenplek worden gezet*/
-export {zetVoedingOpPlank};µ
