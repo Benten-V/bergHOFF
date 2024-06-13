@@ -51,3 +51,27 @@ Comment van item.js
 //   );
 //   itemRandomizer.randomizer();
 //   const itemscijfers = itemRandomizer.update();
+
+code van messen
+/*
+In de functie magSnijden wordt gecontroleerd of het product dat op de plank ligt gesneden mag worden met het mes dat geselecteerd wordt.
+Deze functie geeft true of false terug.
+ */
+// const magSnijden = function (mes) {
+//     checkVoedselTafel()
+//         .then(product => {
+//             if (product.key('mes')[0] === mes){
+//                 return true;
+//             }
+//             else if (product.key('mes')[1]){
+//                 if (product.key('mes')[1] === mes){
+//                     return true;
+//                 }
+//             }
+//             else {
+//                 console.log(mes, product.key('mes'));
+//                 return false;
+//             }
+//         })
+//         .catch(err => console.error(err));
+// }
