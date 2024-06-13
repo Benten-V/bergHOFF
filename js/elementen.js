@@ -37,8 +37,6 @@ const sluitItem = function (verborgen, zichtbaar) {
 document.addEventListener("DOMContentLoaded", function () {
     frigo.addEventListener("click", () => openItem(keuken, frigovenster));
     closeFrigo.addEventListener("click", () => sluitItem(frigovenster, keuken));
-    diepvries.addEventListener("click", () => openItem(keuken, diepvriesvenster));
-    closeDiepvries.addEventListener("click", () => sluitItem(diepvriesvenster, keuken));
     slaapkamerdeur.addEventListener("click", () => openItem(mainsection, keuken));
     slaapkamerterug.addEventListener("click", () => openItem(keuken, mainsection));
     zoom.addEventListener("click", () => openItem(keuken, keukenzoom));
@@ -56,10 +54,6 @@ export {
     groentenplek,
     frigovenster,
     closeFrigo,
-    microgolf,
-    diepvries,
-    diepvriesvenster,
-    closeDiepvries,
     slaapkamerdeur,
     mainsection,
     slaapkamerterug,
