@@ -16,6 +16,7 @@ import {
     fornuis,
     closekast
 } from "./elementen.js";
+import {Dialog,showDialog, badDialog} from "./dialogue.js";
 import {openItem, sluitItem} from "./elementen.js";
 
 const microgolf = document.querySelector(".keuken-img-micro");
@@ -108,6 +109,7 @@ class Inventory {
             this.itemcount3 = 1;
         } else {
             console.log("Foute groente || groenten op bureau geclickt");
+            showDialog(null, badDialog);
         }
         console.log("replace");
     }

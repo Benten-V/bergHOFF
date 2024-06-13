@@ -1,4 +1,7 @@
 import Clock from './clock1.js';
+import * as Dialogue from './dialogue.js';
+import {klaarMetKokenDialog, showDialog} from "./dialogue.js";
+
 const vuur1 = document.getElementById("vuur1");
 const vuur2 = document.getElementById("vuur2");
 const clockLocatie = document.getElementById("circle1");
@@ -51,6 +54,7 @@ class Vuur{
     // deze methode word uitgevoerd als het kookproces klaar is
     klaar(){
         console.log("klaar met koken");
+        showDialog(null, klaarMetKokenDialog);
     }
 }
 const test = new Vuur(vuur1, clockLocatie);

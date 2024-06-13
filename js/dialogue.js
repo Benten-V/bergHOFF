@@ -1,4 +1,4 @@
-(function () {
+
     const dialogBox = document.querySelector(".dialog-box");
     const dialogContent = document.querySelector(".text-dialog");
 
@@ -40,6 +40,7 @@
     const kastDialog = new Dialog("Welkom in de kast", "Hier vind je de pannen en potten die je nodig hebt om te koken", "./Images/dialog-icon.png", "Kast");
     const startDialog = new Dialog("Goedemorgen, tijd voor een ontbijt!", "Selecteer de 2 items die je voor je eten en drinken zal gebruiken.");
     const slaapkamerdeurDialog = new Dialog("Goedemiddag", "Welkom in de keuken hier kan je gebruik maken van ons gehele assortiment om zo ecologisch mogelijk je gerecht te bereiden", "./Images/dialog-icon.png", "slaapkamer-deur");
+    const klaarMetKokenDialog = new Dialog("Klaar met koken", "Het eten is gebakken goed gdn en bedankt voor het spelen", "./Images/dialog-icon.png", "slaapkamer-deur");
 
 
     const goodDialogLinks = document.querySelectorAll(".good-dialogue");
@@ -99,4 +100,4 @@
     window.addEventListener("DOMContentLoaded", () => {
         showDialog(null, startDialog);
     });
-})();
+export {Dialog, klaarMetKokenDialog, showDialog, badDialog}
