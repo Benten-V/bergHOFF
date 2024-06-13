@@ -389,11 +389,16 @@ body {
 
 .messen {
     position: absolute;
-    bottom: 0%;
-    left: 0%;
+    bottom: 25%;
+    left: 5%;
     display: flex;
+    flex-direction: row;
 }
-
+.messen figure{
+    height: 3rem;
+    aspect-ratio: 1/1;
+    width: 36rem;
+}
 .messen img {
     max-width: 6rem;
 }
