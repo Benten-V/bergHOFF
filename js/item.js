@@ -178,7 +178,7 @@ class Kast extends Inventory {
 }
 const steak = new Vlees(
     "steak",
-    "./Images/vlees.png"
+    "./Images/steak.png"
 );
 const kip = new Vlees(
     "kip",
