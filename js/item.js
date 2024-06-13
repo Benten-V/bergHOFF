@@ -112,8 +112,7 @@ class Inventory {
         }
         console.log("replace");
         itemElement.addEventListener('click', ()=> {
-            console.log(itemElement, item)
-            zetVoedingOpPlank(itemElement, item);
+            zetVoedingOpPlank(itemElement);
         })
     }
 

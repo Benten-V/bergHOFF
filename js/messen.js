@@ -19,11 +19,12 @@ const checkVoedselTafel = function () {
     const snijplankFigure = document.querySelector(".snijplankplek");
     const element = snijplankFigure.querySelectorAll('img')[1];
     const voedselOpPlank = element.alt;
-    producten.forEach((product) => {
-        if (product.toString() === voedselOpPlank.toString()) {
-            return product;
-        }
-    })
+    return voedselOpPlank;
+    // producten.forEach((product) => {
+    //     if (product['name'] === voedselOpPlank) {
+    //         return product;
+    //     }
+    // })
 }
 /*In deze functie wordt voor elk mes een lijst gemaakt van voedsel dat met het mes gesneden mag worden.*/
 const checkVoedingVanMes = function (mes) {
@@ -44,6 +45,7 @@ const checkVoedingVanMes = function (mes) {
 /*Hier wordt gecontroleerd of het mes het voedsel mag snijden*/
 const magSnijden = function (mes) {
     const voeding = checkVoedselTafel();
+    console.log(voeding);
     const voedinglijst = checkVoedingVanMes(mes);
     voedinglijst.forEach(voedsel => {
         if (voedsel === voeding) {
