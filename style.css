@@ -947,5 +947,7 @@ th {
         top: -180%;
         right: 3%;
     }
-
+    .text-dialog {
+        padding-top: 0rem;
+    }
 }
